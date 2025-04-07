@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* #nav-dropdown-dark-example{
+    display: flex;
+    padding: 0;
+    align-items: baseline;
+}
+
+#navbarScroll{
+    flex-grow: 0;
+    flex: auto;
+    justify-content: center;
+    align-items: center;
+} */
+
+.offcanvas-custom-width{
+    width: 500px;
+    max-width: 100%;
+  }
+  

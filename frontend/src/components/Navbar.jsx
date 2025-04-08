@@ -14,7 +14,12 @@ import {
   Image,
   InputGroup
 } from 'react-bootstrap';
-
+import '../styles/Navbar.css'
+import Logo from '../assets/Images/logo/logo.svg'
+import Location from '../assets/Images/access/location-icon.svg'
+import Mylocation from '../assets/Images/access/get-my-location.svg'
+import Searchicon from '../assets/Images/access/search-icon.svg'
+import Selectcity from '../assets/Images/access/select_city.svg'
 
 
 function NavScrollExample() {
@@ -115,7 +120,7 @@ function NavScrollExample() {
               <div className='flex flex-row justify-between items-center'>
                 <div>
                   <Image
-                    src="https://img.pristyncare.com/new_brand%2Felements%2Flogo.svg"
+                    src={Logo}
                     alt="Pristyn Care logo"
                     width="125"
                   />
@@ -126,9 +131,9 @@ function NavScrollExample() {
                     className="text-white text-sm flex items-center gap-1 p-0 whitespace-nowrap hover:text-gray-300"
                   >
                     <div className='flex items-center'>
-                      <img
+                      <Image
                         width={18}
-                        src="https://img.pristyncare.com/website-search-icon%2Flocation-icon.svg"
+                        src={Location}
                         alt="Location"
                         className='me-2'
                       />
@@ -156,8 +161,8 @@ function NavScrollExample() {
                   <Navbar.Toggle aria-controls="navbarScroll" />
                 </div>
               </div>
-              <div className='w-full'>
-                <InputGroup size='sm' className='d-none xl:flex'>
+              <div className='w-full mobile-screen-inputbar'>
+                <InputGroup size='sm' className='input-group xl:flex'>
                   <Button
                     variant="light"
                     onClick={handleShowCityModal}
@@ -165,17 +170,17 @@ function NavScrollExample() {
                   >
                     <div className="flex items-center justify-between text-black text-[13px] font-medium">
                       <span className="flex items-center me-2">
-                        <img
+                        <Image
                           width={12}
-                          src="https://img.pristyncare.com/website-search-icon%2Flocation-icon.svg"
+                          src={Location}
                           className="me-1"
                           alt=""
                         />
                         {selectedCity}
                       </span>
-                      <img
+                      <Image
                         width={15}
-                        src="https://img.pristyncare.com/website-search-icon%2Fget-my-location.svg"
+                        src={Mylocation}
                         alt="Detect Location"
                       />
                     </div>
@@ -188,8 +193,8 @@ function NavScrollExample() {
                     className="text-black text-sm focus:outline-none focus:ring-0 border-0"
                   />
                   <Button variant="light" className="rounded-end border-0" onClick={handleSearchClick}>
-                    <img
-                      src="https://img.pristyncare.com/website-search-icon%2Fsearch-icon.svg"
+                    <Image
+                      src={Searchicon}
                       alt="Search"
                       width={16}
                     />
@@ -203,7 +208,7 @@ function NavScrollExample() {
               <div className="hidden xl:flex flex-row justify-between items-center w-full gap-4">
                 <Navbar.Brand href="#home" className="me-4">
                   <Image
-                    src="https://img.pristyncare.com/new_brand%2Felements%2Flogo.svg"
+                    src={Logo}
                     alt="Pristyn Care logo"
                     width="160"
                   />
@@ -220,17 +225,17 @@ function NavScrollExample() {
                       >
                         <div className="flex items-center justify-between text-black text-sm font-medium">
                           <span className="flex items-center me-3">
-                            <img
+                            <Image
                               width={12}
-                              src="https://img.pristyncare.com/website-search-icon%2Flocation-icon.svg"
+                              src={Location}
                               className="me-1"
                               alt=""
                             />
                             {selectedCity}
                           </span>
-                          <img
+                          <Image
                             width={15}
-                            src="https://img.pristyncare.com/website-search-icon%2Fget-my-location.svg"
+                            src={Mylocation}
                             alt="Detect Location"
                           />
                         </div>
@@ -243,8 +248,8 @@ function NavScrollExample() {
                         className="text-black text-sm focus:outline-none focus:ring-0 border-0"
                       />
                       <Button variant="light" className="rounded-end border-0 px-3" onClick={handleSearchClick}>
-                        <img
-                          src="https://img.pristyncare.com/website-search-icon%2Fsearch-icon.svg"
+                        <Image
+                          src={Searchicon}
                           alt="Search"
                           width={16}
                         />
@@ -323,9 +328,9 @@ function NavScrollExample() {
 
                   >
                     <div className='flex'>
-                      <img
+                      <Image
                         width={15}
-                        src="https://img.pristyncare.com/New%20Homepage%20Images%2Fselect_city.svg"
+                        src={Selectcity}
                         alt="Select City"
                         className='me-1'
                       />
@@ -394,10 +399,10 @@ function NavScrollExample() {
                 className="d-flex align-items-center px-2 py-1 rounded-none rounded-start border-0"
               >
                 <span className="flex items-center me-2 text-black text-[13px] font-medium">
-                  <img width={12} src="https://img.pristyncare.com/website-search-icon%2Flocation-icon.svg" className="me-1" alt="" />
+                  <Image width={12} src={Location} className="me-1" alt="" />
                   {selectedCity}
                 </span>
-                <img width={15} src="https://img.pristyncare.com/website-search-icon%2Fget-my-location.svg" alt="Detect Location" />
+                <Image width={15} src={Mylocation} alt="Detect Location" />
               </Button>
               <Form.Control
                 type="search"
@@ -406,7 +411,7 @@ function NavScrollExample() {
                 autoFocus
               />
               <Button variant="light" className="rounded-end border-0">
-                <img src="https://img.pristyncare.com/website-search-icon%2Fsearch-icon.svg" alt="Search" width={16} />
+                <Image src={Searchicon} alt="Search" width={16} />
               </Button>
             </InputGroup>
           </Modal.Header>

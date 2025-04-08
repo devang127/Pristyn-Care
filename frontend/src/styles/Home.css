@@ -365,3 +365,212 @@
   padding-left: 15px;
   padding-right: 15px; 
 }
+
+.view-review{
+  border-color: #3D7CC9 !important;
+  color: #3D7CC9 !important;
+  font-weight: bolder  !important;
+  padding: 0.5rem 2rem !important;
+}
+
+.view-review2{
+  background-color: #3D7CC9 !important;
+  color: white !important;
+  font-weight: bolder !important;
+  padding: 0.5rem 2rem !important;
+}
+
+.carousel-item{
+  min-height: 250px;
+}
+
+
+.stats-section {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-weight: 700;
+  color: #002d3e;
+  margin-bottom: 1.5rem;
+}
+
+.stats-row {
+  row-gap: 1.5rem;
+}
+
+.stat-card {
+  padding: 1.5rem;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+}
+
+.stat-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-number {
+  font-weight: 700;
+  color: #000;
+}
+
+.stat-label {
+  color: #1971c2;
+}
+
+.stat-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.why-section {
+  background-color: #f7f7f9;
+  padding: 3rem 0;
+}
+
+.why-left {
+  background-color: #fff;
+  padding: 2rem;
+}
+
+.why-title {
+  font-weight: 700;
+  color: #002d3e;
+  margin-bottom: 0.5rem;
+}
+
+.why-subtitle {
+  color: #495057;
+  margin-bottom: 1.5rem;
+}
+
+.why-btn {
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  background-color: #fc7a1e;
+  border: none;
+  color: #fff;
+}
+
+.why-right {
+  background-color: #f0f1f5;
+  padding: 2rem;
+}
+
+.reason-box {
+  padding-right: 1rem;
+}
+
+.reason-number {
+  font-size: 2rem;
+  color: #fc7a1e;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.reason-title {
+  font-weight: 600;
+  color: #1c1c1c;
+}
+
+.reason-desc {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.abha-wrapper {
+  background-color: #002744;
+  padding: 3rem 1rem;
+  color: #fff;
+}
+
+.abha-text h2 {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.abha-text .sub-text {
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+.approved {
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.nha-logo {
+  height: 40px;
+  margin-top: 0.5rem;
+}
+
+.store-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.store-img {
+  height: 50px;
+  cursor: pointer;
+}
+
+.abha-image {
+  max-height: 350px;
+  object-fit: contain;
+}
+
+.faq-wrapper {
+  background-color: #ffffff;
+}
+
+.faq-title {
+  font-weight: 700;
+  color: #002744;
+}
+
+.faq-item {
+  border-radius: 8px;
+  border: 1px solid #edf1f7;
+  margin-bottom: 10px;
+  box-shadow: none;
+}
+
+.accordion-button {
+  background-color: transparent !important;
+  color: #1a1a1a;
+  font-weight: 500;
+  box-shadow: none !important;
+  padding: 1rem 1.5rem;
+}
+
+.accordion-button::after {
+  background-image: url("data:image/svg+xml,%3Csvg fill='%23FF7A00' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 1v14M1 8h14' stroke='%23FF7A00' stroke-width='2'/%3E%3C/svg%3E");
+  background-size: 1rem;
+  height: 1rem;
+  width: 1rem;
+}
+
+.accordion-button:not(.collapsed)::after {
+  transform: rotate(45deg);
+}
+
+.accordion-body {
+  background-color: #f9f9f9;
+  padding: 1rem 1.5rem;
+  font-size: 0.95rem;
+  color: #555;
+}

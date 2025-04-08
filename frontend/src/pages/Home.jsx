@@ -23,6 +23,13 @@ import ortho from '../assets/Images/our specialities/Orthopedics.jpg'
 import opth from '../assets/Images/our specialities/Ophtha.jpg'
 import weight from '../assets/Images/our specialities/weight-loss_GMB.jpg'
 import Carousel from 'react-bootstrap/Carousel';
+import NHA from '../assets/Images/access/ABHA.png'
+import anupsoni from '../assets/Images/hero-banner/anup_soni.webp'
+import Abhaphone from '../assets/Images/access/abhaphone.png'
+import Playstore from '../assets/Images/access/playstore.png'
+import Appstore from '../assets/Images/access/appstore.png'
+import { Accordion } from 'react-bootstrap';
+import { Plus } from 'react-bootstrap-icons';
 import { BsStarFill, BsHandThumbsUpFill } from 'react-icons/bs';
 
 const icons = [
@@ -109,6 +116,47 @@ const testimonialsData = [
   { name: 'Kiran Yadav', rating: 5, recommendation: true, review: 'Best medical care I have received.', city: 'PUNE' },
   { name: 'Divya Joshi', rating: 4, recommendation: false, review: 'Satisfied with the consultation.', city: 'AHMEDABAD' },
   { name: 'Divya Joshi', rating: 4, recommendation: false, review: 'Satisfied with the consultation.', city: 'AHMEDABAD' },
+];
+
+const stats = [
+  { number: '2M+', label: 'Happy Patients', icon: '/icons/happy.svg' },
+  { number: '150+', label: 'Clinics', icon: '/icons/clinic.svg' },
+  { number: '45+', label: 'Cities', icon: '/icons/cities.svg' },
+  { number: '150K+', label: 'Surgeries', icon: '/icons/surgery.svg' },
+  { number: '400+', label: 'Doctors', icon: '/icons/doctors.svg' },
+  { number: '800+', label: 'Hospitals', icon: '/icons/hospitals.svg' },
+];
+
+const reasons = [
+  {
+    number: '01.',
+    title: 'Pristyn Care is COVID-19 safe',
+    description: 'Your safety is taken care of by thermal screening, social distancing, sanitized clinics and hospital rooms, sterilized surgical equipment and mandatory PPE kits during surgery.',
+  },
+  {
+    number: '02.',
+    title: 'Assisted Surgery Experience',
+    description: 'A dedicated Care Coordinator assists you throughout the surgery journey from insurance paperwork, to free commute from home to hospital & back and admission-discharge process at the hospital.',
+  },
+  {
+    number: '03.',
+    title: 'Medical Expertise With Technology',
+    description: 'Our surgeons spend a lot of time with you to diagnose your condition. You are assisted in all pre-surgery medical diagnostics. We offer advanced laser and laparoscopic surgical treatment. Our procedures are USFDA approved.',
+  },
+  {
+    number: '04.',
+    title: 'Post Surgery Care',
+    description: 'We offer free follow-up consultations and instructions including dietary tips as well as exercises to every patient to ensure they have a smooth recovery to their daily routines.',
+  },
+];
+
+const faqs = [
+  "How does a care coordinator help a patient at Pristyn Care?",
+  "Does Pristyn Care provide any emergency surgical treatment?",
+  "Does Pristyn Care have its own hospitals?",
+  "Can I consult with a doctor online?",
+  "Does Pristyn Care have insurance coverage for all surgeries?",
+  "Does Pristyn Care provide a second opinion for any disease?",
 ];
 
 const Home = () => {
@@ -367,77 +415,181 @@ const Home = () => {
             <h2>Our Patient Love Us</h2>
             <p>Based on 7699 Recommendation | Rated 5 Out of 5</p>
           </div>
-          <div>
-            <div className='full-width-carousel-wrapper'>
-              <Carousel variant="dark" controls={false} interval={null} className="testimonial-carousel-wrapper bg-light py-5 slider">
-                {testimonialChunks.map((chunk, index) => (
-                  <Carousel.Item key={index}>
-                    <Row className="justify-content-center">
-                      {chunk.map((testimonial, idx) => (
-                        <Col key={idx} xs={12} md={6} lg={4} className="d-flex justify-content-center p-3">
-                          <Card className="testimonial-card shadow-sm rounded-3 border-0" style={{ maxWidth: '500px', width: '100%' }}>
-                            <Card.Body style={{ padding: '1.25rem' }}>
-                              <Stack direction="horizontal" gap={3} className="mb-3 align-items-center">
-                                <div
-                                  className="avatar-placeholder bg-secondary-subtle text-secondary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                                  style={{ width: '45px', height: '45px', fontWeight: 500, fontSize: '1.1em' }}
+
+          <div className='full-width-carousel-wrapper parent-carousel px-32'>
+            <Carousel variant="dark" controls={false} interval={null} className="testimonial-carousel-wrapper bg-light py-5 slider">
+              {testimonialChunks.map((chunk, index) => (
+                <Carousel.Item key={index} className='carousel-item'>
+                  <Row className="justify-content-center">
+                    {chunk.map((testimonial, idx) => (
+                      <Col key={idx} xs={12} md={6} lg={4} className="d-flex justify-content-center p-3">
+                        <Card className="testimonial-card shadow-sm rounded-3 border-0" style={{ maxWidth: '500px', width: '100%' }}>
+                          <Card.Body style={{ padding: '1.25rem' }}>
+                            <Stack direction="horizontal" gap={3} className="mb-3 align-items-center">
+                              <div
+                                className="avatar-placeholder bg-secondary-subtle text-secondary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+                                style={{ width: '45px', height: '45px', fontWeight: 500, fontSize: '1.1em' }}
+                              >
+                                {testimonial.name.split(' ').map(n => n[0]).join('').toUpperCase()}
+                              </div>
+                              <Stack gap={0} className="flex-grow-1">
+                                <Card.Title as="h6" className="mb-1 fw-semibold">{testimonial.name}</Card.Title>
+                                <Stack
+                                  direction="horizontal"
+                                  gap={2}
+                                  className="rating-recommends flex-wrap align-items-center"
+                                  style={{ fontSize: '0.85em' }}
                                 >
-                                  {testimonial.name.split(' ').map(n => n[0]).join('').toUpperCase()}
-                                </div>
-                                <Stack gap={0} className="flex-grow-1">
-                                  <Card.Title as="h6" className="mb-1 fw-semibold">{testimonial.name}</Card.Title>
-                                  <Stack
-                                    direction="horizontal"
-                                    gap={2}
-                                    className="rating-recommends flex-wrap align-items-center"
-                                    style={{ fontSize: '0.85em' }}
-                                  >
-                                    <div className="text-warning">
-                                      {Array.from({ length: testimonial.rating }).map((_, i) => (
-                                        <i key={i} className="bi bi-star-fill me-1"></i>
-                                      ))}
-                                      {testimonial.rating < 5 && Array.from({ length: 5 - testimonial.rating }).map((_, i) => (
-                                        <i key={i} className="bi bi-star me-1"></i>
-                                      ))}
-                                      <span className="ms-1 text-dark fw-medium">{testimonial.rating}/5</span>
+                                  <div className="text-warning">
+                                    {Array.from({ length: testimonial.rating }).map((_, i) => (
+                                      <i key={i} className="bi bi-star-fill me-1"></i>
+                                    ))}
+                                    {testimonial.rating < 5 && Array.from({ length: 5 - testimonial.rating }).map((_, i) => (
+                                      <i key={i} className="bi bi-star me-1"></i>
+                                    ))}
+                                    <span className="ms-1 text-dark fw-medium">{testimonial.rating}/5</span>
+                                  </div>
+                                  {testimonial.recommendation && (
+                                    <div className="text-success d-flex align-items-center">
+                                      <i className="bi bi-hand-thumbs-up-fill me-1"></i>
+                                      <span className="fw-medium">Recommends</span>
                                     </div>
-                                    {testimonial.recommendation && (
-                                      <div className="text-success d-flex align-items-center">
-                                        <i className="bi bi-hand-thumbs-up-fill me-1"></i>
-                                        <span className="fw-medium">Recommends</span>
-                                      </div>
-                                    )}
-                                  </Stack>
+                                  )}
                                 </Stack>
                               </Stack>
-                              <Card.Text className="mb-3">
-                                {testimonial.review}
-                              </Card.Text>
-                              <hr className="my-2" />
-                              <Card.Text className="text-muted small mb-0">
-                                City: {testimonial.city}
-                              </Card.Text>
-                            </Card.Body>
-                          </Card>
-                        </Col>
-                      ))}
-                      {chunk.length === 1 && (
-                        <>
-                          <Col lg={4}></Col>
-                          <Col lg={4}></Col>
-                        </>
-                      )}
-                      {chunk.length === 2 && (
-                        <>
-                          <Col lg={4}></Col>
-                        </>
-                      )}
-                    </Row>
-                  </Carousel.Item>
-                ))}
-              </Carousel>
-            </div>
+                            </Stack>
+                            <Card.Text className="mb-3">
+                              {testimonial.review}
+                            </Card.Text>
+                            <hr className="my-2" />
+                            <Card.Text className="text-muted small mb-0">
+                              City: {testimonial.city}
+                            </Card.Text>
+                          </Card.Body>
+                        </Card>
+                      </Col>
+                    ))}
+                    {chunk.length === 1 && (
+                      <>
+                        <Col lg={4}></Col>
+                        <Col lg={4}></Col>
+                      </>
+                    )}
+                    {chunk.length === 2 && (
+                      <>
+                        <Col lg={4}></Col>
+                      </>
+                    )}
+                  </Row>
+                </Carousel.Item>
+              ))}
+            </Carousel>
           </div>
+          <div className='d-flex justify-content-center align-items-center'>
+            <Button variant="white" className="toggle-btn  view-review me-2">
+              View All Reviews
+            </Button>
+            <Button variant="white" className="toggle-btn  view-review2">
+              Write A Review
+            </Button>
+          </div>
+
+        </div>
+        <div>
+          <Container className="stats-section">
+            <h4 className="section-title">Pristyn Care in Numbers</h4>
+            <Row className="stats-row">
+              {stats.map((stat, index) => (
+                <Col key={index} xs={12} sm={6} md={4}>
+                  <Card className="stat-card">
+                    <div className="stat-content">
+                      <div>
+                        <h4 className="stat-number">{stat.number}</h4>
+                        <div className="stat-label">{stat.label}</div>
+                      </div>
+                      <img src={stat.icon} alt={stat.label} className="stat-icon" />
+                    </div>
+                  </Card>
+                </Col>
+              ))}
+            </Row>
+          </Container>
+        </div>
+        <div>
+          <Container fluid className="why-section">
+            <Row>
+              {/* Left Side */}
+              <Col md={4} className="why-left d-flex flex-column justify-content-center align-items-center text-center">
+                <h4 className="why-title">Why Pristyn Care?</h4>
+                <p className="why-subtitle">Delivering Seamless Surgical Experience in India</p>
+                <Button variant="warning" className="why-btn">Book Free Appointment</Button>
+              </Col>
+
+              {/* Right Side */}
+              <Col md={8} className="why-right">
+                <Row>
+                  {reasons.map((item, index) => (
+                    <Col md={6} key={index} className="mb-4">
+                      <div className="reason-box">
+                        <h2 className="reason-number">{item.number}</h2>
+                        <h6 className="reason-title">{item.title}</h6>
+                        <p className="reason-desc">{item.description}</p>
+                      </div>
+                    </Col>
+                  ))}
+                </Row>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+        <div>
+          <div className="abha-wrapper">
+            <Container fluid className="abha-container">
+              <Row className="align-items-center">
+                {/* Left Image - Hand Holding Phone */}
+                <Col md={3} className="text-center mb-4 mb-md-0">
+                  <Image src={Abhaphone} alt="ABHA Phone" className="abha-image" fluid />
+                </Col>
+
+                {/* Center Text */}
+                <Col md={6} className="text-center abha-text">
+                  <h2>Create Your ABHA ( Health ID )</h2>
+                  <p className="sub-text">Manage your health records digitally !</p>
+                  <p className="approved">Approved By</p>
+                  <Image src={NHA} alt="National Health Authority" className="nha-logo" />
+
+                  <div className="store-buttons mt-3">
+                    <Image src={Playstore} alt="Google Play" className="store-img" />
+                    <Image src={Appstore} alt="App Store" className="store-img ms-3" />
+                  </div>
+                </Col>
+
+
+                <Col md={3} className="text-center mt-4 mt-md-0">
+                  <Image src={anupsoni} alt="Doctor" className="abha-image" fluid />
+                </Col>
+              </Row>
+            </Container>
+          </div>
+        </div>
+        <div>
+          <section className="faq-wrapper">
+            <Container className="py-5">
+              <h3 className="text-center mb-4 faq-title">Frequently Asked Questions</h3>
+              <Accordion defaultActiveKey="" flush>
+                {faqs.map((question, index) => (
+                  <Accordion.Item eventKey={index.toString()} key={index} className="faq-item">
+                    <Accordion.Header>
+                      <span>{question}</span>
+                    </Accordion.Header>
+                    <Accordion.Body>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec justo et sapien blandit porta.
+                    </Accordion.Body>
+                  </Accordion.Item>
+                ))}
+              </Accordion>
+            </Container>
+          </section>
         </div>
       </div>
     </>

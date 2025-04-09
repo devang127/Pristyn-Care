@@ -10,6 +10,8 @@
   margin: 0px 90px;
 }
 
+
+
 @media (max-width: 2560px) {
     .anup-soni-hidden-image{
         display: none !important;
@@ -101,6 +103,10 @@
     margin-bottom: 10px;
     border-radius: 10px;
 }
+
+  .hospital-card{
+    padding: 0px !important;
+  }
 
   .form-card {
     width: 100%;
@@ -383,11 +389,28 @@
 .carousel-item{
   min-height: 250px;
 }
+@media (max-width: 1024px) {
+  .carousel-item{
+    min-height: 534px;
+  }
+}
 
 
 .stats-section {
   margin-top: 3rem;
   margin-bottom: 3rem;
+}
+@media (max-width: 1024px) {
+  .stats-section{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .stats-section{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 .section-title {
@@ -400,8 +423,13 @@
   row-gap: 1.5rem;
 }
 
+
+
 .stat-card {
-  padding: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
   border: none;
   border-radius: 1rem;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.04);
@@ -421,12 +449,20 @@
 }
 
 .stat-number {
+  margin-bottom: 0px;
   font-weight: 700;
   color: #000;
 }
 
 .stat-label {
   color: #1971c2;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .stat-label{
+    font-size: large;
+  }
 }
 
 .stat-icon {
@@ -434,14 +470,29 @@
   height: 40px;
 }
 
+
+
 .why-section {
   background-color: #f7f7f9;
-  padding: 3rem 0;
+  /* padding: 3rem 0; */
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+@media (max-width: 768px) {
+  .why-section-row{
+    display: flex !important;
+    flex-direction: column !important;
+  }
 }
 
 .why-left {
   background-color: #fff;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .why-title {
@@ -452,15 +503,17 @@
 
 .why-subtitle {
   color: #495057;
+  font-weight: 500;
   margin-bottom: 1.5rem;
 }
 
 .why-btn {
   font-weight: 600;
-  padding: 0.6rem 1.5rem;
-  background-color: #fc7a1e;
+  padding: 15px 35px !important;
+  background-color: #ff8300 !important;
   border: none;
-  color: #fff;
+  color: #fff !important;
+  font-weight: bold !important;
 }
 
 .why-right {
@@ -468,69 +521,82 @@
   padding: 2rem;
 }
 
+
+/*  */
 .reason-box {
   padding-right: 1rem;
+  padding-left: 1rem !important;
 }
 
 .reason-number {
-  font-size: 2rem;
+font-size: 55px !important;
   color: #fc7a1e;
   font-weight: 700;
   margin-bottom: 0.3rem;
 }
 
 .reason-title {
-  font-weight: 600;
+  font-weight: bold;
   color: #1c1c1c;
 }
 
 .reason-desc {
   color: #555;
+  font-weight: 600;
   font-size: 0.95rem;
 }
 
 .abha-wrapper {
   background-color: #002744;
-  padding: 3rem 1rem;
   color: #fff;
 }
 
-.abha-text h2 {
+.abha-row{
+  display: flex !important;
+  justify-content: center;
+}
+
+.abha-text h1 {
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 1.9rem !important;
 }
 
 .abha-text .sub-text {
-  font-size: 1.1rem;
   margin-top: 0.5rem;
+}
+
+.abha-text{
+  justify-content: center;
 }
 
 .approved {
   margin-top: 1rem;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .nha-logo {
-  height: 40px;
+  height: 60px;
   margin-top: 0.5rem;
 }
 
 .store-buttons {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
 
 .store-img {
-  height: 50px;
+  height: 60px;
   cursor: pointer;
 }
 
 .abha-image {
   max-height: 350px;
   object-fit: contain;
+  
 }
 
 .faq-wrapper {
@@ -549,6 +615,8 @@
   box-shadow: none;
 }
 
+
+/* accordian */
 .accordion-button {
   background-color: transparent !important;
   color: #1a1a1a;
@@ -573,4 +641,96 @@
   padding: 1rem 1.5rem;
   font-size: 0.95rem;
   color: #555;
+}
+
+
+.testimonial-card{
+  border-radius: 2rem !important;
+
+}
+
+.card-body{
+padding: 1.25rem
+}
+
+.our-patient-love-us-div{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.our-patient-love-us-div p{
+  color: #3D7CC9;
+  font-weight: bold;
+  font-size: small;
+}
+
+
+.readme-button{
+  color: #ff8300 !important;
+  text-decoration: none !important;
+  font-weight: bold !important;
+  padding: 0px !important;
+}
+
+.about-div{
+  padding-bottom: 10px !important;
+  padding-left: 132px !important;
+  padding-right: 132px !important;
+}
+
+
+@media (max-width: 768px) {
+  .about-div{
+
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+.logo-appstore-playstore-div{
+  background-color: #001B2C;
+  color: white;
+  padding-left: 132px !important;
+  padding-right: 132px !important;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+
+@media (max-width: 768px) {
+  .logo-div-top-footer{
+    width: 150px !important;
+  }
+
+  .logo-appstore-playstore-div{
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    display: flex;
+    flex-direction: column;
+    gap:10px
+  }
+
+  .playapp-logos{
+    display: flex;
+
+  }
+
+  .check-out-h4{
+    font-size: 1rem !important;
+  }
+}
+@media (max-width: 1024px) {
+  .logo-appstore-playstore-div{
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+.card-body-div{
+  display: flex;
+  flex-direction: column;
+}
+
+.download-button{
+  padding-right: 0px !important;
 }

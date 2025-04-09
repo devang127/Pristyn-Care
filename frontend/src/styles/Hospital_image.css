@@ -1,0 +1,782 @@
+/* .hospital-card-container {
+    padding: 20px;
+    background-color: white; 
+  }
+  
+  .our-hospital{
+    background-color: #FCFAF7;
+  }
+
+  .hospital-card {
+    padding: 2rem;
+    flex-direction: row !important;
+    border: none !important;
+    border-radius: 1rem !important;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .image-container {
+    position: relative;
+  }
+  
+  .just-launched-badge {
+    background-color: #965FC7 !important;
+    border-top-right-radius: 1rem !important;
+    border-bottom-left-radius: 1rem !important;
+    border-top-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    padding: 0.7rem !important;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 1rem !important;
+  }
+
+  .our-hospital-h2{
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  .get-direction{
+    background-color: white;
+    border: 1px solid #0071BC !important;
+    color: #0071BC !important;
+    font-weight: 600 !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+  
+  .callus-button{
+    background-color: #0071BC !important;
+  
+    border: 1px solid #0071BC !important;
+    color: white !important;
+    font-weight: 600 !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    padding-left: 4rem !important;
+    padding-right: 4rem !important;
+  }
+  
+  .hospital-name {
+    font-size: 28px !important;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .star-image{
+    width: 0.9rem;
+  }
+
+  .star-image{
+    background-color: #00a023 !important;
+    border-radius: 10px ;
+    margin-right: 3px;
+  }
+.count{
+    background-color: #00a023 !important;
+    border-radius: 4px ;
+    color: white;
+    padding: 2px;
+    padding-right: 5px;
+  }
+  
+  .rating {
+    color: #6c757d;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .star-icon {
+    color: #ffc107; 
+    margin-right: 5px;
+  }
+  
+  .review-count {
+    color: #0071BC;
+    font-size: 1rem;
+    font-weight: 500 !important;
+    margin-left: 5px;
+    text-decoration: underline;
+  }
+
+  .location{
+    width: 15px;
+    margin-right: 10px;
+  }
+
+  .address-field{
+    color: black;
+    font-weight: 600 !important;
+  }
+
+  
+  .address {
+    color: #6c757d;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+
+  .NABH {
+    background-color: #F0F2F7;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    font-weight: bold;
+  }
+  .beds {
+    background-color: #F0F2F7;
+    padding: 0.5rem;
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+    border-radius: 2rem;
+  }
+  .clock {
+    background-color: #F0F2F7;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 2rem;
+  }
+  .more {
+    color: #0071BC;
+    text-decoration: underline;
+    font-size: medium;
+    display: flex;
+    align-items: center;
+  }
+  
+  .info-badges {
+    margin-bottom: 15px;
+    color: #6c757d;
+    font-size: 0.9rem;
+  }
+  
+  .info-badges span {
+    margin-right: 5px;
+  }
+  
+  .info-badges .separator {
+    margin-left: 5px;
+  }
+  
+  .description {
+    color: #495057;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .specialities-button{
+    background-color: white !important;
+    color: #0071BC !important;
+    padding: 0.5rem;
+    border: 1px solid #6c757d !important;
+    border-radius: 2rem !important;
+    border-color: #6c757d !important;
+    font-weight: 600 !important;
+  }
+
+  .more2 {
+    color: #0071BC;
+    text-decoration: underline;
+    font-size: medium;
+    display: flex;
+    align-items: center;
+  }
+  
+  .top-specialities h5 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  
+  .speciality-buttons {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .action-buttons button {
+    display: flex;
+    align-items: center;
+  }
+
+  .image-container img{
+    max-width:none;
+  }
+
+  .card-img-top{
+    width: 693px !important;
+    height: 400px;
+    border-top-right-radius: 5rem !important;
+    border-bottom-left-radius: 5rem !important;
+  }
+
+  .card-body-our-hospital{
+    padding: 2rem !important;
+  }
+  
+
+  @media (max-width: 991.98px) {
+    .hospital-card {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+  }
+  
+  @media (max-width: 767.98px) {
+    .action-buttons {
+      flex-direction: column;
+    }
+  } */
+
+  .hospital-card-container {
+    padding: 10px;
+    background-color: white; 
+  }
+
+  .hospital-div{
+    background-color: #FCFAF7;
+  }
+  
+  .our-hospital {
+    background-color: #FCFAF7;
+    padding: 15px 10px;
+  }
+  
+  .hospital-card {
+    padding: 1rem;
+    flex-direction: column !important;
+    border: none !important;
+    border-radius: 0.5rem !important;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .image-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  
+  .just-launched-badge {
+    background-color: #965FC7 !important;
+    border-top-right-radius: 0.5rem !important;
+    border-bottom-left-radius: 0.5rem !important;
+    border-top-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    padding: 0.3rem 0.5rem !important;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 0.7rem !important;
+  }
+  
+  .our-hospital-h2 {
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 1.3rem;
+    padding-left: 10px; 
+  }
+  
+  .get-direction {
+    background-color: white;
+    border: 1px solid #0071BC !important;
+    color: #0071BC !important;
+    font-weight: 500 !important;
+    padding: 0.3rem 0.8rem !important;
+    font-size: 0.75rem;
+  }
+  
+  .callus-button {
+    background-color: #0071BC !important;
+    border: 1px solid #0071BC !important;
+    color: white !important;
+    font-weight: 500 !important;
+    padding: 0.3rem 0.8rem !important;
+    font-size: 0.75rem;
+  }
+  
+  .hospital-name {
+    font-size: 18px !important;
+    font-weight: bold;
+    margin-bottom: 2px;
+  }
+  
+  .star-image {
+    width: 0.6rem;
+  }
+  
+  .star-image {
+    background-color: #00a023 !important;
+    border-radius: 6px;
+    margin-right: 2px;
+  }
+  .count {
+    background-color: #00a023 !important;
+    border-radius: 2px;
+    color: white;
+    padding: 1px 2px;
+    font-size: 0.65rem;
+  }
+  
+  .rating {
+    color: #6c757d;
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+    font-size: 0.7rem;
+  }
+  
+  .review-count {
+    color: #0071BC;
+    font-size: 0.7rem;
+    font-weight: 500 !important;
+    margin-left: 3px;
+    text-decoration: underline;
+  }
+  
+  .location {
+    width: 10px;
+    margin-right: 3px;
+  }
+  
+  .address-field {
+    color: black;
+    font-weight: 500 !important;
+    font-size: 0.7rem;
+  }
+  
+  .address {
+    color: #6c757d;
+    font-size: 0.7rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .NABH {
+    background-color: #F0F2F7;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.8rem;
+    font-weight: bold;
+    font-size: 0.6rem;
+  }
+  .beds {
+    background-color: #F0F2F7;
+    padding: 0.2rem 0.4rem;
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+    border-radius: 0.8rem;
+    font-size: 0.6rem;
+  }
+  .clock {
+    background-color: #F0F2F7;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.8rem;
+    font-size: 0.6rem;
+  }
+  .more {
+    color: #0071BC;
+    text-decoration: underline;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .info-badges {
+    margin-bottom: 8px;
+    color: #6c757d;
+    font-size: 0.6rem;
+  }
+  
+  .info-badges span {
+    margin-right: 2px;
+  }
+  
+  .info-badges .separator {
+    margin-left: 2px;
+  }
+  
+  .description {
+    color: #495057;
+    font-size: 0.7rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  
+  .specialities-button {
+    background-color: white !important;
+    color: #0071BC !important;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid #6c757d !important;
+    border-radius: 0.8rem !important;
+    border-color: #6c757d !important;
+    font-weight: 500 !important;
+    font-size: 0.65rem;
+  }
+  
+  .more2 {
+    color: #0071BC;
+    text-decoration: underline;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .top-specialities h5 {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+  }
+  
+  .speciality-buttons {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+  }
+  
+  .action-buttons button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    font-size: 0.7rem;
+    padding: 0.25rem 0.6rem !important;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+    border-top-right-radius: 5rem !important;
+    border-bottom-left-radius: 5rem !important;
+  }
+  
+  .card-img-top {
+    width: 100% !important;
+    height: auto;
+    border-top-right-radius: 5rem !important;
+    border-bottom-left-radius: 5rem !important;
+  }
+  
+  .card-body-our-hospital {
+    padding: 1rem !important;
+    width: 100%; /* Full width for mobile */
+  }
+  
+  /* Responsive adjustments */
+
+  
+  @media (min-width: 1440px) {
+    .image-container img {
+      max-width: 100%;
+      height: 100%;
+      border-top-right-radius: 5rem !important;
+      border-bottom-left-radius: 5rem !important;
+    }
+
+    .hospital-div{
+      padding-left: 132px !important;
+      padding-right: 132px !important;
+    }
+  }
+  @media (min-width: 1024px) {
+
+    .image-container img {
+      max-width: 100%;
+      height: 100%;
+      border-top-right-radius: 5rem !important;
+      border-bottom-left-radius: 5rem !important;
+    }
+
+    .image-container{
+      width: 50% !important;
+    }
+
+    .hospital-card{
+      height: 90% !important;
+    }
+
+    .hospital-div{
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+  }
+
+  @media (min-width: 425px) {
+    .hospital-div{
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .card-img-side{
+      width: 120px !important;
+      height: 120px !important;
+      border-radius: 25px !important;
+    }
+
+
+    .our-hospital-smaller-screen-div{
+      margin-top: 20px;
+    }
+
+    .smaller-screen-div-for-responsive{
+      display: flex !important;
+      /* height: 150px !important; */
+    }
+
+    .small-screen-title-address{
+      margin: 20px;
+    }
+
+
+    .image-container-onsmall-screen {
+      width: 120px !important;
+      height: 150px !important;
+    }
+
+    .count{
+      font-size: 1rem !important;
+      border-radius: 5px;
+    }
+    .NABH{
+      justify-content: center;
+      align-items: center;
+    }
+    .clock{
+      justify-content: center;
+      align-items: center;
+    }
+    .beds{
+      justify-content: center;
+      align-items: center;
+    }
+    .address-field{
+      font-size: 0.8rem !important;
+    }
+
+    .description{
+      font-size: 1rem !important;
+      font-weight: 450;
+    }
+
+    .review-count{
+      font-size: 1rem !important;
+    }
+
+    .hospital-card {
+      flex-direction: row !important;
+    }
+  }
+
+  @media (min-width: 768px) {
+
+    .hospital-div{
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .card-img-side{
+      width: 120px !important;
+      height: 120px !important;
+      border-radius: 25px !important;
+    }
+
+
+    .our-hospital-smaller-screen-div{
+      margin-top: 20px;
+    }
+
+    .smaller-screen-div-for-responsive{
+      display: flex !important;
+      height: 150px !important;
+    }
+
+    .small-screen-title-address{
+      margin: 20px;
+    }
+
+
+    .image-container-onsmall-screen {
+      width: 120px !important;
+      height: 150px !important;
+    }
+
+    .count{
+      font-size: 1rem !important;
+      border-radius: 5px;
+    }
+    .NABH{
+      justify-content: center;
+      align-items: center;
+    }
+    .clock{
+      justify-content: center;
+      align-items: center;
+    }
+    .beds{
+      justify-content: center;
+      align-items: center;
+    }
+    .address-field{
+      font-size: 0.8rem !important;
+    }
+
+    .description{
+      font-size: 1rem !important;
+      font-weight: 450;
+    }
+
+    .review-count{
+      font-size: 0.7rem !important;
+    }
+
+    .hospital-card {
+      flex-direction: row !important;
+    }
+    .card-body-our-hospital {
+      width: 60%;
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+
+    .card-img-top {
+      border-top-right-radius: 0.5rem !important;
+      border-bottom-left-radius: 0.5rem !important;
+      border-top-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+
+
+    .action-buttons {
+      width: 100% !important;
+      flex-direction: row;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .action-buttons button {
+      padding: 0.3rem 1rem !important;
+      font-size: 0.85rem;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .hospital-card {
+      padding: 2rem;
+      border-radius: 1rem !important;
+    }
+    .image-container {
+      width: 35%;
+    }
+    .card-body-our-hospital {
+      padding: 2rem !important;
+      width: 65%;
+    }
+    .just-launched-badge {
+      padding: 0.7rem !important;
+      font-size: 1rem !important;
+      border-top-right-radius: 1rem !important;
+      border-bottom-left-radius: 1rem !important;
+    }
+    .our-hospital-h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+      padding-left: 0;
+    }
+    .hospital-name {
+      font-size: 28px !important;
+      margin-bottom: 5px;
+    }
+    .star-image {
+      width: 0.9rem;
+      border-radius: 10px;
+      margin-right: 3px;
+    }
+    .count {
+      border-radius: 4px;
+      padding: 2px 5px;
+      font-size: 0.85rem;
+    }
+    .rating {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+    .review-count {
+      font-size: 1rem;
+      margin-left: 5px;
+    }
+    .location {
+      width: 15px;
+      margin-right: 10px;
+    }
+    .address-field {
+      font-size: 0.95rem;
+    }
+    .address {
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+    .NABH, .beds, .clock {
+      padding: 0.5rem;
+      border-radius: 2rem;
+      font-size: 0.9rem;
+    }
+    .more {
+      font-size: medium;
+    }
+    .info-badges {
+      margin-bottom: 15px;
+      font-size: 0.9rem;
+    }
+    .description {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+    .specialities-button {
+      padding: 0.5rem;
+      border-radius: 2rem !important;
+      font-size: 0.9rem;
+    }
+    .more2 {
+      font-size: medium;
+    }
+    .top-specialities h5 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+    .action-buttons {
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .get-direction, .callus-button {
+      padding: 0.5rem 2rem !important;
+      font-size: 1rem;
+    }
+    .card-img-top {
+      border-top-right-radius: 5rem !important;
+      border-bottom-left-radius: 5rem !important;
+    }
+  }

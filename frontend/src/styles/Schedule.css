@@ -1,0 +1,68 @@
+.schedule-surgery-form{
+    background-color: #00263E !important;
+    color: white !important;
+    width: 390px !important;
+    height: 410px;
+    padding-top: 30px ;
+    padding-bottom: 50px !important;
+    border-radius: 30px !important;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.parent-schedule{
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+    padding-left: 132px !important;
+    padding-right: 132px !important;
+}
+
+@media (max-width: 425px) {
+    .parent-schedule{
+        display: flex !important;
+        flex-direction: column;
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+        padding-left: 15px !important;
+        padding-right: 10px !important;
+    }
+
+    .schedule-surgery-form{
+        display: block !important;
+    }
+    
+    .parent-get-in-touch-row{
+        width: 390px !important;
+    }
+
+    .get-in-touch-row{
+        margin-right: 0px !important;
+    }
+
+    
+}
+@media (max-width: 1024px) {
+    .parent-schedule{
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+}
+
+.book-now-button{
+    background-color: #ff8300 !important;
+    border: none !important;
+}
+
+.get-in-touch-container{
+ margin: 0px !important;
+ padding: 0px !important; 
+ max-width: max-content !important;
+}
+
+.get-in-touch{
+    max-width: 400px !important;
+}
+
+.parent-get-in-touch-row{
+    width: 400px !important;
+}
+

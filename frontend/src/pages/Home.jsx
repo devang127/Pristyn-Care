@@ -46,6 +46,10 @@ import clock from '../assets/Images/access/clock.svg'
 import Direction from '../assets/Images/access/direction.png'
 import Call from '../assets/Images/access/phone.svg'
 import '../styles/Schedule.css'
+import '../styles/Faq.css'
+import $ from 'jquery';
+import Select from 'react-select2-wrapper';
+import 'select2/dist/css/select2.min.css';
 
 import '../styles/Hospital_image.css'
 import { Accordion } from 'react-bootstrap';
@@ -179,16 +183,17 @@ const faqs = [
   "Does Pristyn Care provide a second opinion for any disease?",
 ];
 
+const options = [
+  { id: 1, text: 'Delhi' },
+  { id: 2, text: 'Mumbai' },
+  { id: 3, text: 'Bangalore' },
+];
+
 const Home = () => {
   const [showAll, setShowAll] = useState(false);
-
   const visibleIcons = showAll ? icons : icons.slice(0, 6);
-
-
-  const handleSelect = (selectedIndex) => {
-    setIndex(selectedIndex);
-  };
   const [open, setOpen] = useState(false);
+
 
   const testimonialChunks = [];
   for (let i = 0; i < testimonialsData.length; i += 3) {
@@ -211,17 +216,17 @@ const Home = () => {
             <div className='d-flex doctor-dis-citi-div'>
               <div className='common-div-doctor-dis-citi-div border-div'>
                 <h2>400 +</h2>
-                <h7>DOCTORS</h7>
+                <p>DOCTORS</p>
               </div>
 
               <div className='common-div-doctor-dis-citi-div border-div space-div'>
                 <h2>50 +</h2>
-                <h7>DISEASES</h7>
+                <p>DISEASES</p>
               </div>
 
               <div className='common-div-doctor-dis-citi-div space-div'>
                 <h2>45 +</h2>
-                <h7>CITIES</h7>
+                <p>CITIES</p>
               </div>
             </div>
 
@@ -240,7 +245,7 @@ const Home = () => {
                   <Image
                     src={Getconsult}
 
-                    className='m-1.5 consult-inperson-extensive-images'
+                    className='m-1.5 consult-inperson-extensive-images me-2'
                   />
                   <p>Get consultation for 50+ diseases across India</p>
                 </div>
@@ -248,7 +253,7 @@ const Home = () => {
                   <Image
                     src={Inperson}
 
-                    className='m-1.5 consult-inperson-extensive-images'
+                    className='m-1.5 consult-inperson-extensive-images me-2'
                   />
                   <p>In-person and online consultation with experienced doctors</p>
                 </div>
@@ -256,7 +261,7 @@ const Home = () => {
                   <Image
                     src={Extensive}
 
-                    className='m-1.5 consult-inperson-extensive-images'
+                    className='m-1.5 consult-inperson-extensive-images me-2'
                   />
                   <p>Extensive medical assistance throughout your treatment</p>
                 </div>
@@ -274,10 +279,9 @@ const Home = () => {
             />
           </div>
           {/* right div */}
-
-          <div className="d-flex justify-content-center align-items-center  form-div" >
+          <div className="d-flex justify-content-center align-items-center form-div" >
             <Card
-              className='d-flex justify-content-center pb-5 px-4 form-card'>
+              className='d-flex justify-content-center pb-4 px-4 form-card'>
               <div className='d-flex book-free-consultation-form-div'>
                 <h5 className="text-center fw-bold mb-4 mt-4 ">Book Free Consultation</h5>
                 <Image
@@ -294,7 +298,7 @@ const Home = () => {
                   />
                   <label htmlFor="floatingInputCustom">Patient Name</label>
                 </Form.Floating>
-                <Form.Floating className="mb-3">
+                <Form.Floating className="mb-2">
                   <Form.Control
                     id="floatingPasswordCustom"
                     type="text"
@@ -302,25 +306,18 @@ const Home = () => {
                   />
                   <label htmlFor="floatingPasswordCustom">Mobile Number</label>
                 </Form.Floating>
-                {/* <Form.Group className="mb-3">
-                  <Form.Control type="text" placeholder="Patient Name" />
-                </Form.Group> */}
 
-                {/* <Form.Group className="mb-3">
-                  <Form.Control type="text" placeholder="Mobile Number" />
-                </Form.Group> */}
-
-                <Form.Group className="mb-3">
-                  <Form.Select>
-                    <option>Select City</option>
-                    <option>Mumbai</option>
-                    <option>Delhi</option>
-                    <option>Bangalore</option>
+                <Form.Group className="mb-2" controlId="citySelectGroup">
+                  <Form.Select className='p-3'>
+                    <option>Select Disease</option>
+                    <option>Cardiology</option>
+                    <option>Orthopedics</option>
+                    <option>Dermatology</option>
                   </Form.Select>
                 </Form.Group>
 
-                <Form.Group className="mb-4">
-                  <Form.Select>
+                <Form.Group className="mb-3">
+                  <Form.Select className='p-3'>
                     <option>Select Disease</option>
                     <option>Cardiology</option>
                     <option>Orthopedics</option>
@@ -348,10 +345,10 @@ const Home = () => {
       </div>
       <div>
         <Container className="icon-grid-container text-center ">
-          <Row className='mt-3'>
+          <Row className='mt-2 mb-2 '>
             {visibleIcons.map((item, idx) => (
-              <Col key={idx} xs={6} sm={6} md={2} className="mb-4">
-                <div className="icon-card ">
+              <Col key={idx} xs={4} sm={6} md={2} className="mb-4 text ">
+                <div className="icon-card icon-grid-row">
                   <Image variant="" src={item.icon} className="icon-img " />
                   <Card.Body>
                     <Card.Text className="icon-label">{item.label}</Card.Text>
@@ -385,14 +382,12 @@ const Home = () => {
 
       <div className="parent-div-specialities w-full">
         <section className="bg-light py-5 section-specialities">
-
-          <Container>
-            <h3 className="text-center fw-bold mb-4">Our Specialities</h3>
-
-            <div className="our-specialities-grid">
+          <Container className='speciality-container'>
+            <h3 className="text-center fw-bold our-speciality">Our Specialities</h3>
+            <div className="our-specialities-grid ">
               {specialties.map((spec, idx) => (
 
-                <Card key={idx} className="border-0 shadow-sm h-100">
+                <Card key={idx} className="border-0 shadow-sm h-100 ">
                   <Card.Body className="d-flex align-items-center">
                     <img
                       src={spec.image}
@@ -424,7 +419,7 @@ const Home = () => {
       <div>
         <div className='d-flex watch-our-video'>
           <h3 className='watch-our-ads-h2'>Watch Our Ads</h3>
-          <iframe className='video-iframe' width="560" height="315" src="https://www.youtube.com/embed/yjFGWANEU7I?si=N_YjvycAOt4YmCRs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe className='video-iframe' width="560" height="315" src="https://www.youtube.com/embed/yjFGWANEU7I?si=N_YjvycAOt4YmCRs" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
       </div>
 
@@ -436,7 +431,7 @@ const Home = () => {
           </div>
 
           <div className='full-width-carousel-wrapper parent-carousel'>
-            <Carousel variant="dark" controls={false} interval={null} className="testimonial-carousel-wrapper py-5 slider">
+            <Carousel variant="dark" controls={false} interval={null} className="testimonial-carousel-wrapper py-5 px-3 slider d-flex">
               {testimonialChunks.map((chunk, index) => (
                 <Carousel.Item key={index} className='carousel-item'>
                   <Row className="justify-content-center">
@@ -444,46 +439,50 @@ const Home = () => {
                       <Col key={idx} xs={12} md={6} lg={4} className="d-flex justify-content-center p-3">
                         <Card className="testimonial-card shadow-sm  border-0" style={{ maxWidth: '500px', width: '100%' }}>
                           <Card.Body className='card-body'>
-                            <Stack direction="horizontal" gap={3} className="mb-3 align-items-center">
-                              <div
-                                className="avatar-placeholder bg-secondary-subtle text-secondary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
-                                style={{ width: '45px', height: '45px', fontWeight: 500, fontSize: '1.1em' }}
-                              >
-                                {testimonial.name.split(' ').map(n => n[0]).join('').toUpperCase()}
-                              </div>
-                              <Stack gap={0} className="flex-grow-1">
-                                <Card.Title as="h6" className="mb-1 fw-semibold">{testimonial.name}</Card.Title>
-                                <Stack
-                                  direction="horizontal"
-                                  gap={2}
-                                  className="rating-recommends flex-wrap align-items-center"
-                                  style={{ fontSize: '0.85em' }}
+                            <div>
+                              <Stack direction="horizontal" gap={3} className="mb-3 align-items-center">
+                                <div
+                                  className="avatar-placeholder bg-secondary-subtle text-secondary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+                                  style={{ width: '45px', height: '45px', fontWeight: 500, fontSize: '1.1em' }}
                                 >
-                                  <div className="text-warning">
-                                    {Array.from({ length: testimonial.rating }).map((_, i) => (
-                                      <i key={i} className="bi bi-star-fill me-1"></i>
-                                    ))}
-                                    {testimonial.rating < 5 && Array.from({ length: 5 - testimonial.rating }).map((_, i) => (
-                                      <i key={i} className="bi bi-star me-1"></i>
-                                    ))}
-                                    <span className="ms-1 text-dark fw-medium">{testimonial.rating}/5</span>
-                                  </div>
-                                  {testimonial.recommendation && (
-                                    <div className="text-success d-flex align-items-center">
-                                      <i className="bi bi-hand-thumbs-up-fill me-1"></i>
-                                      <span className="fw-medium">Recommends</span>
+                                  {testimonial.name.split(' ').map(n => n[0]).join('').toUpperCase()}
+                                </div>
+                                <Stack gap={0} className="flex-grow-1">
+                                  <Card.Title as="h6" className="mb-1 fw-semibold">{testimonial.name}</Card.Title>
+                                  <Stack
+                                    direction="horizontal"
+                                    gap={2}
+                                    className="rating-recommends flex-wrap align-items-center"
+                                    style={{ fontSize: '0.85em' }}
+                                  >
+                                    <div className="text-warning">
+                                      {Array.from({ length: testimonial.rating }).map((_, i) => (
+                                        <i key={i} className="bi bi-star-fill me-1"></i>
+                                      ))}
+                                      {testimonial.rating < 5 && Array.from({ length: 5 - testimonial.rating }).map((_, i) => (
+                                        <i key={i} className="bi bi-star me-1"></i>
+                                      ))}
+                                      <span className="ms-1 text-dark fw-medium">{testimonial.rating}/5</span>
                                     </div>
-                                  )}
+                                    {testimonial.recommendation && (
+                                      <div className="text-success d-flex align-items-center">
+                                        <i className="bi bi-hand-thumbs-up-fill me-1"></i>
+                                        <span className="fw-medium">Recommends</span>
+                                      </div>
+                                    )}
+                                  </Stack>
                                 </Stack>
                               </Stack>
-                            </Stack>
-                            <Card.Text className="mb-3">
-                              {testimonial.review}
-                            </Card.Text>
-                            <hr className="my-2" />
-                            <Card.Text className="text-muted small mb-0">
-                              City: {testimonial.city}
-                            </Card.Text>
+                              <Card.Text className="mb-3">
+                                {testimonial.review}
+                              </Card.Text>
+                              <hr className="my-2" />
+                            </div>
+                            <div className='text-muted-div'>
+                              <Card.Text className="text-muted small  mb-0">
+                                City: {testimonial.city}
+                              </Card.Text>
+                            </div>
                           </Card.Body>
                         </Card>
                       </Col>
@@ -665,14 +664,14 @@ const Home = () => {
             <Container fluid className="abha-container d-none d-lg-block">
               <Row className="align-items-center abha-row">
 
-                <Col md={2} className="text-center mb-4 mb-md-0 abha-image-div">
-                  <Image src={Abhaphone} alt="ABHA Phone" className="abha-image" fluid />
+                <Col md={3} className="text-center mb-4 mb-md-0 abha-div-image d-flex justify-content-end">
+                  <Image src={Abhaphone} alt="ABHA Phone" className="abha-image1" fluid />
                 </Col>
 
                 {/* Center Text */}
                 <Col md={4} className="text-center abha-text">
                   <div>
-                    <h1 className='fw-bold'>Create Your ABHA ( Health ID )</h1>
+                    <h1 className='fw-bold abha-text-h1'>Create Your ABHA ( Health ID )</h1>
                     <h3 className="sub-text">Manage your health records digitally !</h3>
                   </div>
                   <div className='d-flex justify-content-center gap-3'>
@@ -685,7 +684,7 @@ const Home = () => {
                     <Image src={Appstore} alt="App Store" className="store-img ms-3" />
                   </div>
                 </Col>
-                <Col md={3} className="text-center mt-4 mt-md-0">
+                <Col md={4} className="text-center mt-4 mt-md-0 abha-div-image Z-100">
                   <Image src={anupsoni} alt="Doctor" className="abha-image" fluid />
                 </Col>
               </Row>
@@ -734,15 +733,15 @@ const Home = () => {
         </div>
         <div>
           <section className="faq-wrapper">
-            <Container className="py-5">
+            <Container className="py-5 ">
               <h3 className="text-center mb-4 faq-title">Frequently Asked Questions</h3>
               <Accordion defaultActiveKey="" flush>
                 {faqs.map((question, index) => (
                   <Accordion.Item eventKey={index.toString()} key={index} className="faq-item">
                     <Accordion.Header>
-                      <span>{question}</span>
+                      <span className='question'>{question}</span>
                     </Accordion.Header>
-                    <Accordion.Body>
+                    <Accordion.Body className='accordion-body-div'>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec justo et sapien blandit porta.
                     </Accordion.Body>
                   </Accordion.Item>
@@ -752,7 +751,7 @@ const Home = () => {
           </section>
         </div>
 
-        <div className='about-div'>
+        <div className='about-div '>
           <div className=" my-4">
             <h5><strong>About Pristyn Care</strong></h5>
             <p>
@@ -825,36 +824,36 @@ const Home = () => {
         </div>
 
         <div className='d-flex justify-content-evenly parent-schedule'>
-          <Container className="w-50 get-in-touch-container">
-            <div className='parent-get-in-touch-row'>
-              <Row className='get-in-touch-row ' >
-                <Col xs={10} md={10} lg={12} className="">
-                  <h3 className="fw-bold mb-3">Get in Touch</h3>
-                  <p className="text-muted">
-                    Tell us about your problems and we'll figure out the best treatment option for you.
-                  </p>
+          <Container className=" get-in-touch-container">
+            <Row className='get-in-touch-row d-md-block'>
+              {/* <div className="column-div"> */}
+              <Col lg={12} xl={8} xxl={8} >
+                <h3 className="fw-bold mb-3">Get in Touch</h3>
+                <p className="text-muted">
+                  Tell us about your problems and we'll figure out the best treatment option for you.
+                </p>
 
-                  <p className="fw-semibold mt-4">
-                    Pristyn Care services are accessible Pan India
-                  </p>
+                <p className="fw-semibold mt-4">
+                  Pristyn Care services are accessible Pan India
+                </p>
 
-                  <p className="text-muted">
-                    Pristyn Care has taken the latest medical technologies to ensure consistent quality of advanced surgical care in 45+ cities of India including{' '}
-                    <span className="text-primary">Ahmedabad</span>, <span className="text-primary">Bangalore</span>, <span className="text-primary">Bhubaneswar</span>,{' '}
-                    <span className="text-primary">Chandigarh</span>, <span className="text-primary">Chennai</span>, <span className="text-primary">Coimbatore</span>,{' '}
-                    <span className="text-primary">Dehradun</span>, <span className="text-primary">Delhi</span>, <span className="text-primary">Faridabad</span>,{' '}
-                    <span className="text-primary">Ghaziabad</span>, <span className="text-primary">Gurgaon</span>, <span className="text-primary">Hyderabad</span>,{' '}
-                    <span className="text-primary">Indore</span>, <span className="text-primary">Jaipur</span>, <span className="text-primary">Kochi</span>,{' '}
-                    <span className="text-primary">Kolkata</span>, <span className="text-primary">Kozhikode</span>, <span className="text-primary">Lucknow</span>,{' '}
-                    <span className="text-primary">Ludhiana</span>, <span className="text-primary">Madurai</span>, <span className="text-primary">Meerut</span>,{' '}
-                    <span className="text-primary">Mumbai</span>, <span className="text-primary">Nagpur</span>, <span className="text-primary">Nashik</span>,{' '}
-                    <span className="text-primary">Noida</span>, <span className="text-primary">Patna</span>, <span className="text-primary">Pune</span>,{' '}
-                    <span className="text-primary">Raipur</span>, <span className="text-primary">Ranchi</span>, <span className="text-primary">Thiruvananthapuram</span>,{' '}
-                    <span className="text-primary">Vijayawada</span> and <span className="text-primary">Visakhapatnam</span>.
-                  </p>
-                </Col>
-              </Row>
-            </div>
+                <p className="text-muted">
+                  Pristyn Care has taken the latest medical technologies to ensure consistent quality of advanced surgical care in 45+ cities of India including{' '}
+                  <span className="text-primary">Ahmedabad</span>, <span className="text-primary">Bangalore</span>, <span className="text-primary">Bhubaneswar</span>,{' '}
+                  <span className="text-primary">Chandigarh</span>, <span className="text-primary">Chennai</span>, <span className="text-primary">Coimbatore</span>,{' '}
+                  <span className="text-primary">Dehradun</span>, <span className="text-primary">Delhi</span>, <span className="text-primary">Faridabad</span>,{' '}
+                  <span className="text-primary">Ghaziabad</span>, <span className="text-primary">Gurgaon</span>, <span className="text-primary">Hyderabad</span>,{' '}
+                  <span className="text-primary">Indore</span>, <span className="text-primary">Jaipur</span>, <span className="text-primary">Kochi</span>,{' '}
+                  <span className="text-primary">Kolkata</span>, <span className="text-primary">Kozhikode</span>, <span className="text-primary">Lucknow</span>,{' '}
+                  <span className="text-primary">Ludhiana</span>, <span className="text-primary">Madurai</span>, <span className="text-primary">Meerut</span>,{' '}
+                  <span className="text-primary">Mumbai</span>, <span className="text-primary">Nagpur</span>, <span className="text-primary">Nashik</span>,{' '}
+                  <span className="text-primary">Noida</span>, <span className="text-primary">Patna</span>, <span className="text-primary">Pune</span>,{' '}
+                  <span className="text-primary">Raipur</span>, <span className="text-primary">Ranchi</span>, <span className="text-primary">Thiruvananthapuram</span>,{' '}
+                  <span className="text-primary">Vijayawada</span> and <span className="text-primary">Visakhapatnam</span>.
+                </p>
+              </Col>
+              {/* </div> */}
+            </Row>
           </Container>
 
           <Card
@@ -865,31 +864,31 @@ const Home = () => {
             <Form>
               <Form.Floating className="mb-3 floating-input">
                 <Form.Control
-                  id="floatingInputCustom"
+                  id="floatingInputCustom1"
                   type="text"
                   placeholder="Patient Name"
                 />
-                <label htmlFor="floatingInputCustom">Patient Name</label>
+                <label htmlFor="floatingInputCustom1">Patient Name</label>
               </Form.Floating>
-              <Form.Floating className="mb-3">
+              <Form.Floating className="mb-2">
                 <Form.Control
-                  id="floatingPasswordCustom"
+                  id="floatingPasswordCustom2"
                   type="text"
                   placeholder="Mobile Number"
                 />
-                <label htmlFor="floatingPasswordCustom">Mobile Number</label>
+                <label htmlFor="floatingPasswordCustom2">Mobile Number</label>
               </Form.Floating>
-              <Form.Group className="mb-3">
-                <Form.Select>
-                  <option>Select City</option>
-                  <option>Mumbai</option>
-                  <option>Delhi</option>
-                  <option>Bangalore</option>
+              <Form.Group className="mb-2" controlId="citySelectGroup">
+                <Form.Select className='p-3'>
+                  <option>Select Disease</option>
+                  <option>Cardiology</option>
+                  <option>Orthopedics</option>
+                  <option>Dermatology</option>
                 </Form.Select>
               </Form.Group>
 
-              <Form.Group className="mb-4">
-                <Form.Select>
+              <Form.Group className="mb-3">
+                <Form.Select className='p-3'>
                   <option>Select Disease</option>
                   <option>Cardiology</option>
                   <option>Orthopedics</option>

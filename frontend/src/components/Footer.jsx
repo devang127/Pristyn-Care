@@ -50,38 +50,21 @@ function Footer() {
 
 
   return (
-    <footer style={{ backgroundColor: '#00263e', color: 'white' }} className="pt-4 pb-3 pt-md-5 ">
+    <footer  className="pt-4 pb-3 pt-md-5 footer-parent-div">
       <Container >
         <div className=''>
-
-
           <Row className="gy-4 mb-4 flex  justify-between">
-
-            {/* Column 1: Logo & App */}
-            {/* <Col xs={12} md={6} lg={3}>
-            <Image src={LOGO_URL} alt="Pristyn Care Logo" width={160} className="mb-3" />
-            <p className="text-white-50 mb-2">Check out our app!</p> 
-            <Stack direction="horizontal" gap={2} className="mb-3">
-            <a href="#playstore" target="_blank" rel="noopener noreferrer">
-            <Image src={PLAY_STORE_URL} alt="Get it on Google Play" height={40} />
-            </a>
-            <a href="#appstore" target="_blank" rel="noopener noreferrer">
-            <Image src={APP_STORE_URL} alt="Download on the App Store" height={40} />
-            </a>
-            </Stack>
-            </Col> */}
-
-            {/* Column 2: Our Company */}
+            {/*Our Company */}
             <Col xs={6} sm={4} lg={2}>
               <h5 className="mb-3">Our Company</h5>
-              <Nav className="flex-column">
+              <Nav className=" flex-column ">
                 {companyLinks.map(link => (
-                  <Nav.Link key={link.name} href={link.href} className="text-white-50 py-1 px-0">{link.name}</Nav.Link>
+                  <Nav.Link key={link.name} href={link.href} className="text-white-50 py-1 px-0 ">{link.name}</Nav.Link>
                 ))}
               </Nav>
             </Col>
 
-            {/* Column 3: Surgery */}
+            {/*Surgery */}
             <Col xs={6} sm={4} lg={2}>
               <h5 className="mb-3">Surgery</h5>
               <Nav className="flex-column">
@@ -91,7 +74,7 @@ function Footer() {
               </Nav>
             </Col>
 
-            {/* Column 4: For Patients */}
+            {/*For Patients */}
             <Col xs={6} sm={4} lg={2}>
               <h5 className="mb-3">For Patients</h5>
               <Nav className="flex-column">
@@ -101,8 +84,7 @@ function Footer() {
               </Nav>
             </Col>
 
-            {/* Column 5: Other Links & Social */}
-            {/* Adjust breakpoints as needed, maybe md={6} lg={3} ? */}
+            {/*Other Links & Social */}
             <Col xs={6} sm={12} md={6} lg={3}>
               <h5 className="mb-3">Other Links</h5>
               <Nav className="flex-column">
@@ -111,17 +93,12 @@ function Footer() {
                 ))}
               </Nav>
               <h5 className="mt-4 mb-3">Social Media</h5>
-              {/* Use react-bootstrap-icons or other icon library */}
               <Nav className="flex-row gap-3">
                 <Nav.Link href="#facebook" className="text-white fs-5 px-0"><Facebook /></Nav.Link>
                 <Nav.Link href="#instagram" className="text-white fs-5 px-0"><Instagram /></Nav.Link>
                 <Nav.Link href="#linkedin" className="text-white fs-5 px-0"><Linkedin /></Nav.Link>
                 <Nav.Link href="#twitter" className="text-white fs-5 px-0"><Twitter /></Nav.Link>
                 <Nav.Link href="#youtube" className="text-white fs-5 px-0"><Youtube /></Nav.Link>
-                {/* Placeholder Text if icons not installed: */}
-                {/* <Nav.Link href="#facebook" className="text-white">FB</Nav.Link> */}
-                {/* <Nav.Link href="#instagram" className="text-white">IN</Nav.Link> */}
-                {/* ... etc */}
               </Nav>
             </Col>
           </Row>

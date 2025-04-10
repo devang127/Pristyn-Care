@@ -16,17 +16,25 @@
     padding-right: 132px !important;
 }
 
+
 @media (max-width: 425px) {
     .parent-schedule{
         display: flex !important;
         flex-direction: column;
+        align-items: center;
         margin-top: 10px !important;
         margin-bottom: 10px !important;
         padding-left: 15px !important;
         padding-right: 10px !important;
     }
 
+    .column-div{
+      max-width: none;
+      width: none;
+    }
+
     .schedule-surgery-form{
+        width: 370px !important;
         display: block !important;
     }
     
@@ -38,8 +46,122 @@
         margin-right: 0px !important;
     }
 
-    
+    .hospital-div{
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+  
+      .card-img-side{
+        width: 120px !important;
+        height: 120px !important;
+        border-radius: 25px !important;
+      }
+  
+  
+      .our-hospital-smaller-screen-div{
+        margin-top: 20px;
+      }
+  
+      .smaller-screen-div-for-responsive{
+        display: flex !important;
+        height: 150px !important;
+      }
+  
+      .small-screen-title-address{
+        margin: 20px;
+      }
+  
+  
+      .image-container-onsmall-screen {
+        width: 120px !important;
+        height: 150px !important;
+      }
+  
+      .count{
+        font-size: 1rem !important;
+        border-radius: 5px;
+      }
+      .NABH{
+        justify-content: center;
+        align-items: center;
+      }
+      .clock{
+        justify-content: center;
+        align-items: center;
+      }
+      .beds{
+        justify-content: center;
+        align-items: center;
+      }
+      .address-field{
+        font-size: 0.8rem !important;
+      }
+  
+      .description{
+        font-size: 1rem !important;
+        font-weight: 450;
+      }
+  
+      .review-count{
+        font-size: 0.7rem !important;
+      }
+  
+      .hospital-card {
+        flex-direction: row !important;
+      }
+      .card-body-our-hospital {
+        width: 60%;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+      }
+  
+      .card-img-top {
+        border-top-right-radius: 0.5rem !important;
+        border-bottom-left-radius: 0.5rem !important;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+  
+  
+  
+      .action-buttons {
+        width: 100% !important;
+        flex-direction: row;
+        gap: 10px;
+        margin-top: 15px;
+      }
+      .action-buttons button {
+        padding: 0.3rem 1rem !important;
+        font-size: 0.85rem;
+      }
+
+      .video-iframe{
+        width: 370px;
+      }
+
+      .form-card{
+        width: 370px;
+      }
+      .form-div{
+        width: 370px;
+      }    
+
+
 }
+
+@media (min-width: 425px) {
+  .get-in-touch-container{
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .get-in-touch-container{
+    width: 50% !important;
+  }
+}
+
+
 @media (max-width: 1024px) {
     .parent-schedule{
         padding-left: 20px !important;
@@ -55,7 +177,7 @@
 .get-in-touch-container{
  margin: 0px !important;
  padding: 0px !important; 
- max-width: max-content !important;
+ /* max-width: max-content !important; */
 }
 
 .get-in-touch{

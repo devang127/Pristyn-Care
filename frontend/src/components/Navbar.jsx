@@ -33,13 +33,13 @@ import Pune from '../assets/Images/city/pune.png'
 
 const popularCities = [
   { name: 'Bangalore', icon: banglore },
-  { name: 'Chennai', icon: Chennai},
-  { name: 'Delhi', icon:  Delhi },
-  { name: 'Gurgaon', icon:Gurgaon  },
-  { name: 'Hyderabad', icon: Kolkata},
-  { name: 'Kolkata', icon: Hyderabad},
-  { name: 'Lucknow', icon:  Lucknow },
-  { name: 'Mumbai', icon:  Mumbai},
+  { name: 'Chennai', icon: Chennai },
+  { name: 'Delhi', icon: Delhi },
+  { name: 'Gurgaon', icon: Gurgaon },
+  { name: 'Hyderabad', icon: Kolkata },
+  { name: 'Kolkata', icon: Hyderabad },
+  { name: 'Lucknow', icon: Lucknow },
+  { name: 'Mumbai', icon: Mumbai },
   { name: 'Pune', icon: Pune },
 ];
 
@@ -49,7 +49,69 @@ const otherCities = [
 ];
 
 
+const specialties = [
+  {
+    name: 'Proctology',
+    items: [
+      { name: 'Piles Treatment', href: '#proctology/piles' },
+      { name: 'Fissure Surgery', href: '#proctology/fissure' },
+      { name: 'Fistula Treatment', href: '#proctology/fistula' },
+    ],
+  },
+  {
+    name: 'Laparoscopy',
+    items: [
+      { name: 'Gallstone Surgery', href: '#laparoscopy/gallstone' },
+      { name: 'Hernia Repair', href: '#laparoscopy/hernia' },
+    ],
+  },
+  {
+    name: 'Gynaecology',
+    items: [
+      { name: 'Hysterectomy', href: '#gynaecology/hysterectomy' },
+      { name: 'Abortion/MTP', href: '#gynaecology/mtp' },
+      { name: 'Vaginal Tightening', href: '#gynaecology/tightening' },
+    ],
+  },
+  {
+    name: 'ENT',
+    items: [
+      { name: 'Sinusitis Treatment', href: '#ent/sinusitis' },
+      { name: 'Tonsillectomy', href: '#ent/tonsillectomy' },
+    ],
+  },
+  {
+    name: 'Urology',
+    items: [
+      { name: 'Kidney Stones', href: '#urology/kidney-stones' },
+      { name: 'Circumcision', href: '#urology/circumcision' },
+    ],
+  },
+  {
+    name: 'Vascular',
+    items: [
+      { name: 'Varicose Veins', href: '#vascular/varicose' },
+      { name: 'Spider Veins', href: '#vascular/spider' },
+    ],
+  },
+  {
+    name: 'Aesthetics',
+    items: [
+      { name: 'Liposuction', href: '#aesthetics/liposuction' },
+      { name: 'Hair Transplant', href: '#aesthetics/hair' },
+    ],
+  },
+  { name: 'Orthopedics', items: [{ name: 'Knee Replacement', href: '#ortho/knee' }] },
+  { name: 'Ophthalmology', items: [{ name: 'LASIK', href: '#ophtha/lasik' }] },
+  { name: 'Weight Loss', items: [{ name: 'Bariatric Surgery', href: '#weightloss/bariatric' }] },
+  { name: 'Dermatology', items: [{ name: 'Acne Treatment', href: '#derma/acne' }] },
+  { name: 'Wellness', items: [{ name: 'Health Checkup', href: '#wellness/checkup' }] },
+];
+
+
 function NavScrollExample() {
+
+
   const [showCityModal, setShowCityModal] = useState(false);
   const [showSearchModal, setShowSearchModal] = useState(false);
   const [showDropdownPatients, setShowDropdownPatients] = useState(false);
@@ -66,8 +128,16 @@ function NavScrollExample() {
   const handleSelectCity = (city) => {
     setSelectedCity(city);
     handleCloseCityModal();
+    handleCloseCityOffcanvas();
     console.log("Selected city:", city);
   };
+
+
+
+  const [showSpecialtiesOffcanvas, setShowSpecialtiesOffcanvas] = useState(false);
+  const handleCloseSpecialtiesOffcanvas = () => setShowSpecialtiesOffcanvas(false);
+  const handleShowSpecialtiesOffcanvas = () => setShowSpecialtiesOffcanvas(true);
+
 
   const handleShowSearchModal = () => setShowSearchModal(true);
   const handleCloseSearchModal = () => setShowSearchModal(false);
@@ -77,64 +147,9 @@ function NavScrollExample() {
     handleShowSearchModal();
   }
 
-  const specialties = [
-    {
-      name: 'Proctology',
-      items: [
-        { name: 'Piles Treatment', href: '#proctology/piles' },
-        { name: 'Fissure Surgery', href: '#proctology/fissure' },
-        { name: 'Fistula Treatment', href: '#proctology/fistula' },
-      ],
-    },
-    {
-      name: 'Laparoscopy',
-      items: [
-        { name: 'Gallstone Surgery', href: '#laparoscopy/gallstone' },
-        { name: 'Hernia Repair', href: '#laparoscopy/hernia' },
-      ],
-    },
-    {
-      name: 'Gynaecology',
-      items: [
-        { name: 'Hysterectomy', href: '#gynaecology/hysterectomy' },
-        { name: 'Abortion/MTP', href: '#gynaecology/mtp' },
-        { name: 'Vaginal Tightening', href: '#gynaecology/tightening' },
-      ],
-    },
-    {
-      name: 'ENT',
-      items: [
-        { name: 'Sinusitis Treatment', href: '#ent/sinusitis' },
-        { name: 'Tonsillectomy', href: '#ent/tonsillectomy' },
-      ],
-    },
-    {
-      name: 'Urology',
-      items: [
-        { name: 'Kidney Stones', href: '#urology/kidney-stones' },
-        { name: 'Circumcision', href: '#urology/circumcision' },
-      ],
-    },
-    {
-      name: 'Vascular',
-      items: [
-        { name: 'Varicose Veins', href: '#vascular/varicose' },
-        { name: 'Spider Veins', href: '#vascular/spider' },
-      ],
-    },
-    {
-      name: 'Aesthetics',
-      items: [
-        { name: 'Liposuction', href: '#aesthetics/liposuction' },
-        { name: 'Hair Transplant', href: '#aesthetics/hair' },
-      ],
-    },
-    { name: 'Orthopedics', items: [{ name: 'Knee Replacement', href: '#ortho/knee' }] },
-    { name: 'Ophthalmology', items: [{ name: 'LASIK', href: '#ophtha/lasik' }] },
-    { name: 'Weight Loss', items: [{ name: 'Bariatric Surgery', href: '#weightloss/bariatric' }] },
-    { name: 'Dermatology', items: [{ name: 'Acne Treatment', href: '#derma/acne' }] },
-    { name: 'Wellness', items: [{ name: 'Health Checkup', href: '#wellness/checkup' }] },
-  ];
+
+
+
 
   const [search, setSearch] = useState('');
   const filteredOtherCities = otherCities.filter(city =>
@@ -149,7 +164,7 @@ function NavScrollExample() {
           <Navbar expand="xl" variant="dark" className="py-2 ">
             <Container fluid className='px-3'>
               <div className="flex flex-col w-full xl:hidden py-2 ">
-                <div className='flex flex-row justify-between items-center'>
+                <div className='flex flex-row justify-between items-center mobile-screen-navbar'>
                   <div>
                     <Image
                       src={Logo}
@@ -182,7 +197,11 @@ function NavScrollExample() {
                         </div>
                       </div>
                     </Button>
-                    <Navbar.Toggle aria-controls="navbarScroll" />
+                    <Navbar.Toggle
+                      aria-controls="specialties-offcanvas" // Controls the new offcanvas
+                      onClick={handleShowSpecialtiesOffcanvas} // Explicitly set onClick
+                      className="border-0 focus:outline-none focus:ring-0" // Basic styling
+                    />
                   </div>
                 </div>
                 <div className='w-full mobile-screen-inputbar'>
@@ -403,7 +422,6 @@ function NavScrollExample() {
                     </Button>
                   </Nav>
                 </div>
-
               </Navbar.Collapse>
             </Container>
           </Navbar>
@@ -523,7 +541,48 @@ function NavScrollExample() {
               </Container>
             </Navbar>
           </div>
+          <Offcanvas
+            show={showSpecialtiesOffcanvas}
+            onHide={handleCloseSpecialtiesOffcanvas}
+            placement="end" 
+            className="w-100 xs:flex md:hidden lg:hidden" 
+            id="specialties-offcanvas"
+            responsive="xl" 
+          >
+            <Offcanvas.Header closeButton>
+              <Offcanvas.Title>Our Specialities</Offcanvas.Title>
+            </Offcanvas.Header>
+            <Offcanvas.Body>
+              <Nav className="flex-column">
+                {specialties.map((specialty, index) => (
+                  <Nav.Item key={index} className="mb-2 border-bottom"> 
+                    <Dropdown>
+                      <Dropdown.Toggle
+                        variant="link"
+                        id={`dropdown-mobile-${specialty.name.toLowerCase()}`} 
+                        className="text-dark text-decoration-none d-block w-100 text-start p-2" 
+                      >
+                        {specialty.name}
+                      </Dropdown.Toggle>
 
+                      <Dropdown.Menu className="w-100 border-0 shadow-none position-relative"> 
+                        {specialty.items.map((item, itemIndex) => (
+                          <Dropdown.Item
+                            key={itemIndex}
+                            href={item.href}
+                            onClick={handleCloseSpecialtiesOffcanvas} 
+                            className="ps-4" 
+                          >
+                            {item.name}
+                          </Dropdown.Item>
+                        ))}
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </Nav.Item>
+                ))}
+              </Nav>
+            </Offcanvas.Body>
+          </Offcanvas>
         </div>
         {/* multiple dropdown section end */}
       </div>

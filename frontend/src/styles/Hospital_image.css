@@ -283,6 +283,55 @@
 
   }
 
+  @media (min-width: 370px) {
+
+    .hospital-div{
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .NABH{
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card-img-side{
+      margin-bottom: 5px !important;
+      border-radius: 5px !important;
+    }
+
+    .card-body-our-hospital{
+      padding-top: 25px !important;
+    }
+    .count{
+      font-size: 1rem !important;
+    }
+
+    .review-count{
+      font-size: 1rem !important;
+    }
+
+    .location{
+      width: 30px !important;
+    }
+    
+    .address-field{
+      font-size: 1rem !important;
+      padding-bottom: 10px !important;
+      padding-top: 10px !important;
+    }
+
+    .description{
+      font-size: 1rem !important;
+    }
+
+    .smaller-screen-div-for-responsive {
+      display: block !important;
+       height: auto !important; 
+  }
+
+
+  }
   @media (min-width: 425px) {
     .hospital-div{
       padding-left: 20px;

@@ -8,3 +8,13 @@
 .multiple-dropdown-section{
     background-color: white;
 }
+
+.mobile-screen-navbar{
+    padding-bottom: 10px !important;
+}
+
+@media (max-width: 768px) {
+    .mobile-screen-navbar{
+        padding-bottom: 0px !important;
+    }
+}

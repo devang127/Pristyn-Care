@@ -50,7 +50,7 @@ import '../styles/Faq.css'
 import $ from 'jquery';
 import Select from 'react-select2-wrapper';
 import 'select2/dist/css/select2.min.css';
-
+import '../styles/Hospitalcard.css'
 import '../styles/Hospital_image.css'
 import { Accordion } from 'react-bootstrap';
 import { Plus } from 'react-bootstrap-icons';
@@ -535,95 +535,94 @@ const Home = () => {
           {/* </Container> */}
         </div>
 
-        <div className='hospital-div px-32'>
+        <div className=' card-hospital'>
           {/* <Container className=" container-fluid hospital-card-container "> */}
           <Row>
-            <Col md={12}>
-              <h2 className='our-hospital-h2'>Our Hospital</h2>
-            </Col>
-          </Row>
-          <Row className=''>
-            <Col md={12} lg={12} className="">
-              <Card className="hospital-card  ">
-                <div className="image-container d-none d-sm-none d-md-none d-lg-flex">
-                  <Image
-                    src={Hospital_image}
-                    alt="Pristyn Care Elantis Super Speciality Hospital"
-                    className="card-img-top "
-                  />
-                </div>
-                <Card.Body className='card-body-our-hospital'>
-                  <div className='smaller-screen-div-for-responsive'>
-                    <div className="image-container-onsmall-screen lg:hidden xl:hidden xxl:hidden me-3">
-                      <Image
-                        src={Hospital_image}
-                        alt="Pristyn Care Elantis Super Speciality Hospital"
-                        className="card-img-side "
-                      />
-                    </div>
-                    <div className='our-hospital-smaller-screen-div'>
-                      <Card.Title className="hospital-name">
-                        Pristyn Care Elantis
-                      </Card.Title>
-                      <Badge bg='none' className="just-launched-badge">
-                        Just Launched
-                      </Badge>
-                      <div className="rating">
-                        <div className='count d-flex'>
-                          <Image src={star} className='star-image' />
-                          4.6/5
-                        </div>
-                        <span className="review-count">Reviews(6)</span>
+            <Col xs={12}>
+              <Card className="pc-hospital-card">
+                <div className="d-flex flex-column flex-lg-row">
+
+                  <div className="pc-hospital-image-wrapper" >
+                    <Image
+                      src={Hospital_image}
+                      alt="Pristyn Care Elantis Super Speciality Hospital"
+                      className="w-100 h-100 object-cover"
+                      style={{ objectFit: 'cover' }}
+                    />
+                  </div>
+
+                  <Card.Body className="p-3 p-lg-4">
+                    <div className="d-flex flex-column">
+                      <div className="d-flex justify-content-between align-items-start mb-2">
+                        <Card.Title className="pc-hospital-title h4 mb-0">
+                          Pristyn Care Elantis
+                        </Card.Title>
+                        <Badge bg="primary" className="pc-new-badge ms-2">
+                          Just Launched
+                        </Badge>
                       </div>
-                      <Card.Text className="address">
-                        <Image src={Location} className='location' />
-                        <span className='address-field'>
-                          Address: 29, Ring Road, Block L, Lajpat Nagar, Delhi - 110024
+
+                      <div className="pc-rating-container mb-2">
+                        <Image src={star} className="me-1" width={16} />
+                        <span className="fw-bold">4.6/5</span>
+                        <span className="pc-review-count">Reviews(6)</span>
+                      </div>
+
+                      <div className="mb-3">
+                        <div className="pc-address-container">
+                          <Image src={Location} className="me-2 mt-1" width={16} />
+                          <span>
+                            Address: 29, Ring Road, Block L, Lajpat Nagar, Delhi - 110024
+                          </span>
+                        </div>
+                      </div>
+
+                      <div className="pc-facility-badges d-flex flex-wrap mb-3">
+                        <span className="d-flex align-items-center me-3 mb-2">
+                          <Image src={NABH} className="me-1" width={18} />NABH
                         </span>
+                        <span className="d-flex align-items-center me-3 mb-2">
+                          <Image src={beds} className="me-1" width={18} />30+ Beds
+                        </span>
+                        <span className="d-flex align-items-center me-3 mb-2">
+                          <Image src={clock} className="me-1" width={18} />24/7 Open
+                        </span>
+                        <span className="pc-more-link mb-2">+1 More</span>
+                      </div>
+
+                      <Card.Text className="pc-description mb-3">
+                        Pristyn Care Elantis is dedicated to revolutionizing surgical care. We combine the latest medical technology with highly skilled professionals and a patient-centric approach to transform the healthcare experience. <a href="#read-more" className="pc-more-link">Read More</a>
                       </Card.Text>
+
+                      <div className="pc-specialities-section mb-3">
+                        <h5 className="mb-2">Top Specialities</h5>
+                        <div className="d-flex flex-wrap">
+                          <Button variant="outline-primary" size="sm" className="pc-specialty-button">
+                            Proctology
+                          </Button>
+                          <Button variant="outline-primary" size="sm" className="pc-specialty-button">
+                            Urology
+                          </Button>
+                          <Button variant="outline-primary" size="sm" className="pc-specialty-button">
+                            Laparoscopy
+                          </Button>
+                          <span className="d-flex align-items-center pc-more-link mb-2">
+                            +7 More
+                          </span>
+                        </div>
+                      </div>
+
+                      <div className="pc-action-buttons d-flex flex-wrap">
+                        <Button variant="outline-primary" className="me-2 mb-2 d-flex align-items-center">
+                          <Image src={Direction} width={18} className="me-2" /> Get Directions
+                        </Button>
+                        <Button variant="primary" className="mb-2 d-flex align-items-center">
+                          <Image src={Call} width={18} className="me-2" /> Call Us
+                        </Button>
+                      </div>
                     </div>
-                  </div>
-
-
-                  <div className="info-badges d-flex">
-                    <span className='NABH d-flex'>
-                      <Image src={NABH} className='mr-1' />NABH</span>
-
-                    <span className='beds d-flex'><Image src={beds} width={21} className='mr-1' />30+ Beds</span>
-
-                    <span className='clock d-flex'><Image src={clock} width={21} className='mr-1' />24/7 Open</span>
-
-                    <span className='more d-flex'>+1 More</span>
-                  </div>
-                  <Card.Text className="description">
-                    Pristyn Care Elantis is dedicated to revolutionizing surgical care. We combine the latest medical technology with highly skilled professionals and a patient-centric approach to transform the healthcare experience. <a href="#read-more">Read More</a>
-                  </Card.Text>
-                  <div className="top-specialities">
-                    <h5>Top Specialities</h5>
-                    <div className="speciality-buttons">
-                      <Button size="sm" className="me-2 mb-2 specialities-button">
-                        Proctology
-                      </Button>
-                      <Button variant="none" size="sm" className="me-2 mb-2 specialities-button">
-                        Urology
-                      </Button>
-                      <Button variant="none" size="sm" className="me-2 mb-2 specialities-button">
-                        Laparoscopy
-                      </Button>
-                      <span size="sm" className="mb-2 more2 ">
-                        +7 More
-                      </span>
-                    </div>
-                  </div>
-                  <div className="action-buttons">
-                    <Button variant="none" className="me-2 get-direction">
-                      <Image src={Direction} width={21} className='mr-1' /> Get Directions
-                    </Button>
-                    <Button variant="none" className='callus-button'>
-                      <Image src={Call} width={21} className='mr-1' />Call Us
-                    </Button>
-                  </div>
-                </Card.Body>
+                  </Card.Body>
+                </div>
               </Card>
             </Col>
           </Row>

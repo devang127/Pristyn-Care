@@ -1,0 +1,511 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Welcome to Pristyn care</title>
+    <style>
+        /** BEGIN DEFAULT LAYOUT STYLES **/
+        /** stolen from default email layout  */
+        /**
+  * # Root
+  * - CSS resets and general styles go here.
+**/
+        html,
+        body,
+        a,
+        span,
+        div[style*="margin: 16px 0"] {
+            border: 0 !important;
+            margin: 0 !important;
+            outline: 0 !important;
+            padding: 0 !important;
+            text-decoration: none !important;
+        }
+
+        a,
+        span,
+        td,
+        th {
+            -webkit-font-smoothing: antialiased !important;
+            -moz-osx-font-smoothing: grayscale !important;
+        }
+
+        /** Override to green Climate link color */
+        table.st-Wrapper a {
+            color: #09825d !important;
+        }
+
+        /**
+  * # Delink
+  * - Classes for overriding clients which creates links out of things like
+  *   emails, addresses, phone numbers, etc.
+**/
+        span.st-Delink a {
+            color: #525f7f !important;
+            text-decoration: none !important;
+        }
+
+        /** Modifier: preheader */
+        span.st-Delink.st-Delink--preheader a {
+            color: white !important;
+            text-decoration: none !important;
+        }
+
+        /** */
+        /** Modifier: title */
+        span.st-Delink.st-Delink--title a {
+            color: #32325d !important;
+            text-decoration: none !important;
+        }
+
+        /** */
+        /** Modifier: footer */
+        span.st-Delink.st-Delink--footer a {
+            color: #8898aa !important;
+            text-decoration: none !important;
+        }
+
+        /** Ensure bottom radius isn't overridden by inner table */
+        table.st-Wrapper>tbody>tr>td>table.st-Width:last-child {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        /** BEGIN CLIMATE STYLES **/
+        /**
+  * # Mobile
+  * - This affects emails views in clients less than 800px wide.
+**/
+        @media all and (max-width: 800px) {
+
+            /** Width goes from 780px to 100% */
+            table.st-Wrapper,
+            table.st-Width.st-Width--mobile {
+                min-width: 100% !important;
+                width: 100% !important;
+            }
+
+            /** Top/bottom spacers (from darker-gray external background) are removed, and edges are un-rounded, so content takes up the whole screen */
+            td.st-Spacer.st-Spacer--emailStart,
+            td.st-Spacer.st-Spacer--emailEnd {
+                height: 0 !important;
+            }
+
+            table.st-Wrapper,
+            td.st-Climate-Banner,
+            table.st-Wrapper>tbody>tr>td>table.st-Width:last-child {
+                border-radius: 0 !important;
+            }
+
+            /** Left/right gutter gets smaller */
+            td.st-Spacer.st-Spacer--gutter {
+                width: 40px !important;
+            }
+
+            td.st-Spacer.st-Spacer--gutter.st-Spacer--mobile-mini-gutter {
+                width: 16px !important;
+            }
+
+            /** Hide desktop-only, show mobile-only elements */
+            .st-Climate--desktop-only {
+                display: none !important;
+                max-height: 0 !important;
+                max-width: 0 !important;
+                mso-hide: all !important;
+                opacity: 0 !important;
+                overflow: hidden !important;
+                visibility: hidden !important;
+            }
+
+            .st-Climate--mobile-only {
+                display: table-cell !important;
+                max-height: none !important;
+                max-width: none !important;
+                mso-hide: none !important;
+                opacity: 1 !important;
+                overflow: auto !important;
+                visibility: visible !important;
+            }
+
+            /** Ensure mobile images only get height when visible */
+            td.st-Climate-Divider.st-Climate--mobile-only {
+                height: 180px;
+            }
+
+            td.st-Climate-ImpactStory--image.st-Climate--mobile-only {
+                height: 190px;
+            }
+
+            td.st-Climate-ProjectBrief--image.st-Climate--mobile-only,
+            td.st-Climate-ProjectBrief--image.st-Climate--mobile-only div {
+                height: 138px;
+            }
+
+            td.st-Climate-ProjectBrief--image.st-Climate--mobile-only div {
+                width: 1000px;
+            }
+
+            /** Make chart image smaller on mobile */
+            td.st-Climate-Chart--image {
+                width: 40%;
+            }
+
+            td.st-Climate-Chart--image>table {
+                width: 100%;
+            }
+
+            td.st-Climate-Chart--image td.st-Climate--mobile-only {
+                width: 100%;
+                height: 175px;
+            }
+
+            td.st-Climate-Chart--spacer {
+                width: 8px !important;
+            }
+        }
+
+        /** Darkmode targeting */
+        /* note that [data-ogsc] prefix below is hacky dark-mode targeting for some outlook clients */
+        @media (prefers-color-scheme: dark) {
+
+            /** Completely hide diagonal dividers, since the colors won't work */
+            table.st-Climate-Divider {
+                display: none !important;
+                max-height: 0 !important;
+                max-width: 0 !important;
+                mso-hide: all !important;
+                opacity: 0 !important;
+                overflow: hidden !important;
+                visibility: hidden !important;
+            }
+
+            /** Change impact story border color to work better */
+            .st-Climate-ImpactStory-Content,
+            .st-Climate-ProjectBrief-Content {
+                border-color: #697386;
+            }
+        }
+
+        [data-ogsc] table.st-Climate-Divider {
+            display: none !important;
+            max-height: 0 !important;
+            max-width: 0 !important;
+            mso-hide: all !important;
+            opacity: 0 !important;
+            overflow: hidden !important;
+            visibility: hidden !important;
+        }
+
+        [data-ogsc] .st-Climate-ImpactStory-Content,
+        [data-ogsc] .st-Climate-ProjectBrief-Content {
+            border-color: #697386;
+        }
+
+        /** END CLIMATE STYLES **/
+    </style>
+</head>
+
+<body class="st-Email" bgcolor="#E7ECF1"
+    style="border: 0; margin: 0; padding: 0; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; min-width: 100%; width: 100%;">
+
+    <!-- Background -->
+    <table class="st-Background" bgcolor="#E7ECF1" border="0" cellpadding="0" cellspacing="0" width="100%"
+        style="border: 0; margin: 0; padding: 0;">
+        <tbody>
+            <tr>
+                <td class="st-Spacer st-Spacer--emailStart" height="32"
+                    style="border: 0; margin: 0; padding: 0; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">
+                    <div class="st-Spacer st-Spacer--filler">&nbsp;</div>
+                </td>
+            </tr>
+            <tr>
+                <td style="border: 0; margin: 0; padding: 0;">
+
+                    <!-- Wrapper -->
+                    <table class="st-Wrapper" align="center" bgcolor="ffffff" border="0" cellpadding="0" cellspacing="0"
+                        width="600" style="border-radius: 5px; margin: 0 auto; min-width: 600px;">
+                        <tbody>
+                            <tr>
+                                <td style="border: 0; margin: 0; padding: 0;">
+
+                                 
+                                    <table class="st-Width st-Width--mobile" border="0" cellpadding="0" cellspacing="0"
+                                        width="780" bgcolor="#F7FAFC"
+                                        style="min-width: 780px; background-color: #F7FAFC;">
+                                        <tbody>
+                                            <tr>
+                                                <td class="st-Spacer st-Spacer--stacked" colspan="3" height="24"
+                                                    style="border: 0; margin: 0; padding: 0; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">
+                                                    <div class="st-Spacer st-Spacer--filler"> </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="st-Width st-Width--mobile" border="0" cellpadding="0" cellspacing="0"
+                                        width="780" bgcolor="#F7FAFC"
+                                        style="min-width: 780px; background-color: #F7FAFC;">
+                                        <tbody>
+                                            <tr>
+                                                <td class="st-Spacer st-Spacer--gutter"
+                                                    style="border: 0; margin: 0; padding: 0; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;"
+                                                    width="144">
+                                                    <div class="st-Spacer st-Spacer--filler"> </div>
+                                                </td>
+                                                <td
+                                                style="border: 0; margin: 0; padding: 0; color: #3C4257 !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Ubuntu, sans-serif; font-size: 16px; line-height: 24px;">
+                                                <a style="display: inline-block; border: 0; margin: 0; padding: 0; color: #556cd6 !important; text-decoration: none;width: 140px; height: 70px; "
+                                                   href="<%= adminUrl %>">
+                                                    <img style="width: 100%;"
+                                                         src="<%= adminUrl %>/img/logo.png">
+                                                </a>
+                                            </td>
+                                                <td class="st-Spacer st-Spacer--gutter"
+                                                    style="border: 0; margin: 0; padding: 0; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;"
+                                                    width="144">
+                                                    <div class="st-Spacer st-Spacer--filler"> </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="st-Width st-Width--mobile" border="0" cellpadding="0" cellspacing="0"
+                                        width="780" bgcolor="#F7FAFC"
+                                        style="min-width: 780px; background-color: #F7FAFC;">
+                                        <tbody>
+                                            <tr>
+                                                <td class="st-Spacer st-Spacer--stacked" colspan="3" height="56"
+                                                    style="border: 0; margin: 0; padding: 0; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">
+                                                    <div class="st-Spacer st-Spacer--filler"> </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <table class="st-Width st-Width--mobile" border="0" cellpadding="0" cellspacing="0"
+                                        width="780" bgcolor="#F7FAFC"
+                                        style="min-width: 780px; background-color: #F7FAFC;">
+                                        <tbody>
+                                            <tr>
+                                                <td class="st-Spacer st-Spacer--stacked" colspan="3" height="8"
+                                                    style="border: 0; margin: 0; padding: 0; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">
+                                                    <div class="st-Spacer st-Spacer--filler"> </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="st-Width st-Width--mobile" border="0" cellpadding="0" cellspacing="0"
+                                        width="780" bgcolor="#F7FAFC"
+                                        style="min-width: 780px; background-color: #F7FAFC;">
+                                        <tbody>
+                                            <tr>
+                                                <td class="st-Spacer st-Spacer--gutter"
+                                                    style="border: 0; margin: 0; padding: 0; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;"
+                                                    width="144">
+                                                    <div class="st-Spacer st-Spacer--filler"> </div>
+                                                </td>
+                                                <td
+                                                    style="border: 0; margin: 0; padding: 0; color: #0A2540 !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Ubuntu, sans-serif; font-size: 35px; line-height: 48px; font-weight: bold;">
+                                                    Your email verification link.
+                                                </td>
+                                                <td class="st-Spacer st-Spacer--gutter"
+                                                    style="border: 0; margin: 0; padding: 0; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;"
+                                                    width="144">
+                                                    <div class="st-Spacer st-Spacer--filler"> </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                              <td class="st-Spacer st-Spacer--gutter"
+                                                    style="border: 0; margin: 0; padding: 0; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;"
+                                                    width="144">
+                                                    <div class="st-Spacer st-Spacer--filler"> </div>
+                                                </td>
+                                                <td>
+                                                  <h4>Hello!</h4>
+                                                  <p>
+                                                    Please click the button below to verify your email address.
+                                                  </p>
+                                                   <a href="<%= link %>"
+                                                        style="margin-top: 40px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Ubuntu, sans-serif; display: inline-block; color: #000 !important; background-color: #E7ECF1; padding: 20px 40px !important; font-size: 16px; border-radius: 4px;">Verify Email Address
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!--<table class="st-Width st-Width--mobile" border="0" cellpadding="0" cellspacing="0"-->
+                                    <!--    width="780" bgcolor="#F7FAFC"-->
+                                    <!--    style="min-width: 780px; background-color: #F7FAFC;">-->
+                                    <!--    <tbody>-->
+                                    <!--        <tr>-->
+                                    <!--            <td class="st-Spacer st-Spacer--stacked" colspan="3" height="64"-->
+                                    <!--                style="border: 0; margin: 0; padding: 0; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">-->
+                                    <!--                <div class="st-Spacer st-Spacer--filler"> </div>-->
+                                    <!--            </td>-->
+                                    <!--        </tr>-->
+                                    <!--    </tbody>-->
+                                    <!--</table>-->
+
+
+
+                                    <!--<table class="st-Width st-Width--mobile" border="0" cellpadding="0" cellspacing="0"-->
+                                    <!--    width="780" bgcolor="#FFFFFF"-->
+                                    <!--    style="margin-top: 40px; min-width: 780px; background-color: #FFFFFF;">-->
+                                    <!--    <tbody>-->
+                                    <!--        <tr>-->
+                                    <!--            <td class="st-Spacer st-Spacer--gutter"-->
+                                    <!--                style="border: 0; margin: 0; padding: 0; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;"-->
+                                    <!--                width="144">-->
+                                    <!--                <div class="st-Spacer st-Spacer--filler"> </div>-->
+                                    <!--            </td>-->
+                                    <!--            <td class="st-Spacer st-Spacer--gutter"-->
+                                    <!--                style="border: 0; margin: 0; padding: 0; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;"-->
+                                    <!--                width="144">-->
+                                    <!--                <a href="<%= link %>"-->
+                                    <!--                    style="margin-top: 40px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Ubuntu, sans-serif; display: inline-block; color: #000 !important; background-color: #E7ECF1; padding: 20px 40px !important; font-size: 16px; border-radius: 4px;">Verify Email-->
+                                    <!--                    </a>-->
+                                    <!--            </td>-->
+                                    <!--            <td class="st-Spacer st-Spacer--gutter"-->
+                                    <!--                style="border: 0; margin: 0; padding: 0; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;"-->
+                                    <!--                width="144">-->
+                                    <!--                <div class="st-Spacer st-Spacer--filler"> </div>-->
+                                    <!--            </td>-->
+                                    <!--        </tr>-->
+                                    <!--    </tbody>-->
+                                    <!--</table>-->
+
+
+
+
+                                    <!--<table class="st-Width st-Width--mobile" border="0" cellpadding="0" cellspacing="0"-->
+                                    <!--    width="780" bgcolor="#FFFFFF"-->
+                                    <!--    style="min-width: 780px; background-color: #FFFFFF;">-->
+                                    <!--    <tbody>-->
+                                    <!--        <tr>-->
+                                    <!--            <td class="st-Spacer st-Spacer--stacked" colspan="3" height="64"-->
+                                    <!--                style="border: 0; margin: 0; padding: 0; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">-->
+                                    <!--                <div class="st-Spacer st-Spacer--filler"> </div>-->
+                                    <!--            </td>-->
+                                    <!--        </tr>-->
+                                    <!--    </tbody>-->
+                                    <!--</table>-->
+                                    <table class="st-Width st-Width--mobile" border="0" cellpadding="0" cellspacing="0"
+                                        width="780" bgcolor="#F7FAFC"
+                                        style="min-width: 780px; background-color: #F7FAFC;">
+                                        <tbody>
+                                            <tr>
+                                                <td class="st-Spacer st-Spacer--stacked" colspan="3" height="10"
+                                                    style="border: 0; margin: 0; padding: 0; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">
+                                                    <div class="st-Spacer st-Spacer--filler"> </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="st-Width st-Width--mobile" border="0" cellpadding="0" cellspacing="0"
+                                        width="780" bgcolor="#F7FAFC"
+                                        style="min-width: 780px; background-color: #F7FAFC;">
+                                        <tbody>
+                                            <tr>
+                                                <td class="st-Spacer st-Spacer--gutter"
+                                                    style="border: 0; margin: 0; padding: 0; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;"
+                                                    width="144">
+                                                    <div class="st-Spacer st-Spacer--filler"> </div>
+                                                </td>
+                                                <td
+                                                    style="border: 0; margin: 0; padding: 0; color: #3C4257 !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Ubuntu, sans-serif; font-size: 16px; line-height: 24px;">
+
+                                                    <table
+                                                        class="st-Spacer st-Spacer--standalone st-Width st-Width--mobile"
+                                                        border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td height="12"
+                                                                    style="border: 0; margin: 0; padding: 0; font-size: 1px; line-height: 1px; max-height: 1px; mso-line-height-rule: exactly;">
+                                                                    <div class="st-Spacer st-Spacer--filler"> </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <p>
+                                                      If you did not create an account, no further action is required.
+                                                    </p>
+                                                    <p
+                                                        style="border: 0; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Ubuntu, sans-serif;">
+                                                        Thank you, <br>
+                                                        Pristyn care team</p>
+                                                </td>
+                                                <td class="st-Spacer st-Spacer--gutter"
+                                                    style="border: 0; margin: 0; padding: 0; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;"
+                                                    width="144">
+                                                    <div class="st-Spacer st-Spacer--filler"> </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="st-Width st-Width--mobile" border="0" cellpadding="0" cellspacing="0"
+                                        width="780" bgcolor="#F7FAFC"
+                                        style="min-width: 780px; background-color: #F7FAFC;">
+                                        <tbody>
+                                            <tr>
+                                                <td class="st-Spacer st-Spacer--stacked" colspan="3" height="16"
+                                                    style="border: 0; margin: 0; padding: 0; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">
+                                                    <div class="st-Spacer st-Spacer--filler"> </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="st-Width st-Width--mobile" border="0" cellpadding="0" cellspacing="0"
+                                        width="780" bgcolor="#F7FAFC"
+                                        style="min-width: 780px; background-color: #F7FAFC;">
+                                        <tbody>
+                                            <tr>
+                                                <td class="st-Spacer st-Spacer--stacked" colspan="3" height="32"
+                                                    style="border: 0; margin: 0; padding: 0; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">
+                                                    <div class="st-Spacer st-Spacer--filler"> </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="st-Width st-Width--mobile" border="0" cellpadding="0" cellspacing="0"
+                                        width="780" bgcolor="#F7FAFC"
+                                        style="min-width: 780px; background-color: #F7FAFC;">
+                                        <tbody>
+                                            <tr>
+                                                <td class="st-Spacer st-Spacer--stacked" colspan="3" height="16"
+                                                    style="border: 0; margin: 0; padding: 0; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">
+                                                    <div class="st-Spacer st-Spacer--filler"> </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <table class="st-Width st-Width--mobile" border="0" cellpadding="0" cellspacing="0"
+                                        width="780" bgcolor="#F7FAFC"
+                                        style="min-width: 780px; background-color: #F7FAFC;">
+                                        <tbody>
+                                            <tr>
+                                                <td class="st-Spacer st-Spacer--stacked" colspan="3" height="64"
+                                                    style="border: 0; margin: 0; padding: 0; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">
+                                                    <div class="st-Spacer st-Spacer--filler"> </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table> <!-- /Wrapper -->
+                </td>
+            </tr>
+            <tr>
+                <td class="st-Spacer st-Spacer--emailEnd" height="64"
+                    style="border: 0; margin: 0; padding: 0; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">
+                    <div class="st-Spacer st-Spacer--filler">&nbsp;</div>
+                </td>
+            </tr>
+        </tbody>
+    </table> <!-- /Background -->
+
+</body>
+
+</html>
